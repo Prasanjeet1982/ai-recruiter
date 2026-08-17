@@ -1,0 +1,44 @@
+[
+  {
+    "id": "WD-1001",
+    "reqNumber": "REQ-2026-084",
+    "jobTitle": "Lead GenAI Engineer",
+    "candidateId": "CAND-101",
+    "candidateName": "Dr. Elena Rostova",
+    "stage": "Assessment / Interview",
+    "submittedBy": "Sarah Jenkins",
+    "submittedAt": "2026-08-16T14:30:00Z",
+    "scorecardStatus": "Submitted",
+    "overallRating": "Strong Hire (94/100)",
+    "recommendation": "Strong Hire",
+    "notes": "Outstanding depth in vLLM, PagedAttention, and distributed LoRA fine-tuning. Highly recommended for offer."
+  },
+  {
+    "id": "WD-1002",
+    "reqNumber": "REQ-2026-092",
+    "jobTitle": "Principal AI Architect",
+    "candidateId": "CAND-105",
+    "candidateName": "Vikram Malhotra",
+    "stage": "Offer Preparation",
+    "submittedBy": "Sophia Zhang",
+    "submittedAt": "2026-08-15T11:15:00Z",
+    "scorecardStatus": "Submitted",
+    "overallRating": "Strong Hire (96/100)",
+    "recommendation": "Strong Hire",
+    "notes": "Ex-Google architect with unparalleled enterprise LLM gateway design and AI governance leadership."
+  },
+  {
+    "id": "WD-1003",
+    "reqNumber": "REQ-2026-041",
+    "jobTitle": "Senior Data Engineer",
+    "candidateId": "CAND-109",
+    "candidateName": "Rajesh Kothari",
+    "stage": "Interview Complete",
+    "submittedBy": "Kavita Nair",
+    "submittedAt": "2026-08-14T17:45:00Z",
+    "scorecardStatus": "Submitted",
+    "overallRating": "Hire (82/100)",
+    "recommendation": "Hire",
+    "notes": "Strong knowledge of Iceberg ACID transactions and Flink 2PC checkpointing."
+  }
+]

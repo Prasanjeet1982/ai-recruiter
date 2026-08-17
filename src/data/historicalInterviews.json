@@ -1,0 +1,2225 @@
+[
+  {
+    "id": "INT-REC-1001",
+    "candidateId": "CAND-101",
+    "candidateName": "Dr. Elena Rostova",
+    "candidateRole": "GenAI Engineer",
+    "interviewerId": "INT-001",
+    "interviewerName": "Sarah Jenkins",
+    "hiringManagerId": "HM-001",
+    "date": "2026-07-08",
+    "status": "Completed",
+    "mode": "Subjective",
+    "totalScore": 97,
+    "recommendation": "Strong Hire",
+    "competencyScores": {
+      "technicalKnowledge": 5,
+      "problemSolving": 5,
+      "communication": 5,
+      "architectureSkills": 5,
+      "codingSkills": 5
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of GenAI Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Minor deep-dive needed on edge-case telemetry."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in GenAI Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed exceptional mastery and standout technical acumen throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-08T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-08T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1002",
+    "candidateId": "CAND-102",
+    "candidateName": "Marcus Vance",
+    "candidateRole": "AI Architect",
+    "interviewerId": "INT-002",
+    "interviewerName": "David Chen",
+    "hiringManagerId": "HM-002",
+    "date": "2026-08-16",
+    "status": "Completed",
+    "mode": "Hybrid",
+    "totalScore": 93,
+    "recommendation": "Strong Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 5,
+      "architectureSkills": 5,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of AI Architect paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Minor deep-dive needed on edge-case telemetry."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in AI Architect methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed exceptional mastery and standout technical acumen throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-08-16T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-16T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1003",
+    "candidateId": "CAND-103",
+    "candidateName": "Priya Sharma",
+    "candidateRole": "Data Engineer",
+    "interviewerId": "INT-003",
+    "interviewerName": "Sophia Zhang",
+    "hiringManagerId": "HM-003",
+    "date": "2026-08-11",
+    "status": "Completed",
+    "mode": "MCQ",
+    "totalScore": 96,
+    "recommendation": "Strong Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 5,
+      "communication": 5,
+      "architectureSkills": 5,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Data Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Minor deep-dive needed on edge-case telemetry."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Data Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed exceptional mastery and standout technical acumen throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-08-11T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-11T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1004",
+    "candidateId": "CAND-104",
+    "candidateName": "Jordan Lee",
+    "candidateRole": "Full Stack Engineer",
+    "interviewerId": "INT-004",
+    "interviewerName": "Alex Rivera",
+    "hiringManagerId": "HM-004",
+    "date": "2026-06-24",
+    "status": "Completed",
+    "mode": "Subjective",
+    "totalScore": 95,
+    "recommendation": "Strong Hire",
+    "competencyScores": {
+      "technicalKnowledge": 5,
+      "problemSolving": 4,
+      "communication": 5,
+      "architectureSkills": 5,
+      "codingSkills": 5
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Full Stack Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Minor deep-dive needed on edge-case telemetry."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Full Stack Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed exceptional mastery and standout technical acumen throughout the structured evaluation."
+    },
+    "workdaySynced": false,
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-06-24T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1005",
+    "candidateId": "CAND-105",
+    "candidateName": "Vikram Malhotra",
+    "candidateRole": "DevOps Engineer",
+    "interviewerId": "INT-005",
+    "interviewerName": "Kavita Nair",
+    "hiringManagerId": "HM-005",
+    "date": "2026-08-04",
+    "status": "Completed",
+    "mode": "Hybrid",
+    "totalScore": 87,
+    "recommendation": "Strong Hire",
+    "competencyScores": {
+      "technicalKnowledge": 5,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 5,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of DevOps Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Minor deep-dive needed on edge-case telemetry."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in DevOps Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed exceptional mastery and standout technical acumen throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-08-04T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-04T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1006",
+    "candidateId": "CAND-106",
+    "candidateName": "Amara Okonkwo",
+    "candidateRole": "GenAI Engineer",
+    "interviewerId": "INT-006",
+    "interviewerName": "Marcus Sterling",
+    "hiringManagerId": "HM-001",
+    "date": "2026-07-13",
+    "status": "Completed",
+    "mode": "MCQ",
+    "totalScore": 92,
+    "recommendation": "Strong Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 5,
+      "communication": 4,
+      "architectureSkills": 5,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of GenAI Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Minor deep-dive needed on edge-case telemetry."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in GenAI Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed exceptional mastery and standout technical acumen throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-13T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-13T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1007",
+    "candidateId": "CAND-107",
+    "candidateName": "Liam O'Connor",
+    "candidateRole": "AI Architect",
+    "interviewerId": "INT-007",
+    "interviewerName": "Emily Wong",
+    "hiringManagerId": "HM-002",
+    "date": "2026-08-01",
+    "status": "Completed",
+    "mode": "Subjective",
+    "totalScore": 89,
+    "recommendation": "Strong Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 5,
+      "communication": 4,
+      "architectureSkills": 5,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of AI Architect paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Minor deep-dive needed on edge-case telemetry."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in AI Architect methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed exceptional mastery and standout technical acumen throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-08-01T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-01T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1008",
+    "candidateId": "CAND-108",
+    "candidateName": "Rachel Goldman",
+    "candidateRole": "Data Engineer",
+    "interviewerId": "INT-008",
+    "interviewerName": "Nathaniel Price",
+    "hiringManagerId": "HM-003",
+    "date": "2026-07-27",
+    "status": "Completed",
+    "mode": "Hybrid",
+    "totalScore": 97,
+    "recommendation": "Strong Hire",
+    "competencyScores": {
+      "technicalKnowledge": 5,
+      "problemSolving": 5,
+      "communication": 5,
+      "architectureSkills": 5,
+      "codingSkills": 5
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Data Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Minor deep-dive needed on edge-case telemetry."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Data Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed exceptional mastery and standout technical acumen throughout the structured evaluation."
+    },
+    "workdaySynced": false,
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-27T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1009",
+    "candidateId": "CAND-109",
+    "candidateName": "Rajesh Kothari",
+    "candidateRole": "Full Stack Engineer",
+    "interviewerId": "INT-009",
+    "interviewerName": "Gary Larson",
+    "hiringManagerId": "HM-004",
+    "date": "2026-07-11",
+    "status": "Completed",
+    "mode": "MCQ",
+    "totalScore": 89,
+    "recommendation": "Strong Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 5,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 5
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Full Stack Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Minor deep-dive needed on edge-case telemetry."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Full Stack Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed exceptional mastery and standout technical acumen throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-11T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-11T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1010",
+    "candidateId": "CAND-110",
+    "candidateName": "Hannah Schmidt",
+    "candidateRole": "DevOps Engineer",
+    "interviewerId": "INT-010",
+    "interviewerName": "Samantha Reed",
+    "hiringManagerId": "HM-005",
+    "date": "2026-07-11",
+    "status": "Feedback Pending",
+    "mode": "Subjective",
+    "totalScore": 95,
+    "recommendation": "Strong Hire",
+    "competencyScores": {
+      "technicalKnowledge": 5,
+      "problemSolving": 5,
+      "communication": 4,
+      "architectureSkills": 5,
+      "codingSkills": 5
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of DevOps Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Minor deep-dive needed on edge-case telemetry."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in DevOps Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed exceptional mastery and standout technical acumen throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-11T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-11T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1011",
+    "candidateId": "CAND-111",
+    "candidateName": "Carlos Delgado",
+    "candidateRole": "GenAI Engineer",
+    "interviewerId": "INT-001",
+    "interviewerName": "Sarah Jenkins",
+    "hiringManagerId": "HM-001",
+    "date": "2026-07-20",
+    "status": "Completed",
+    "mode": "Hybrid",
+    "totalScore": 89,
+    "recommendation": "Strong Hire",
+    "competencyScores": {
+      "technicalKnowledge": 5,
+      "problemSolving": 5,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of GenAI Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Minor deep-dive needed on edge-case telemetry."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in GenAI Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed exceptional mastery and standout technical acumen throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-20T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-20T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1012",
+    "candidateId": "CAND-112",
+    "candidateName": "Zoe Chen",
+    "candidateRole": "AI Architect",
+    "interviewerId": "INT-002",
+    "interviewerName": "David Chen",
+    "hiringManagerId": "HM-002",
+    "date": "2026-08-06",
+    "status": "Completed",
+    "mode": "MCQ",
+    "totalScore": 96,
+    "recommendation": "Strong Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 5,
+      "codingSkills": 5
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of AI Architect paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Minor deep-dive needed on edge-case telemetry."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in AI Architect methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed exceptional mastery and standout technical acumen throughout the structured evaluation."
+    },
+    "workdaySynced": false,
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-06T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1013",
+    "candidateId": "CAND-113",
+    "candidateName": "Lucas Barbosa",
+    "candidateRole": "Data Engineer",
+    "interviewerId": "INT-003",
+    "interviewerName": "Sophia Zhang",
+    "hiringManagerId": "HM-003",
+    "date": "2026-08-08",
+    "status": "Completed",
+    "mode": "Subjective",
+    "totalScore": 90,
+    "recommendation": "Strong Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 5,
+      "communication": 4,
+      "architectureSkills": 5,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Data Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Minor deep-dive needed on edge-case telemetry."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Data Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed exceptional mastery and standout technical acumen throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-08-08T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-08T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1014",
+    "candidateId": "CAND-114",
+    "candidateName": "Maya Lin",
+    "candidateRole": "Full Stack Engineer",
+    "interviewerId": "INT-004",
+    "interviewerName": "Alex Rivera",
+    "hiringManagerId": "HM-004",
+    "date": "2026-07-11",
+    "status": "Completed",
+    "mode": "Hybrid",
+    "totalScore": 92,
+    "recommendation": "Strong Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 5,
+      "architectureSkills": 5,
+      "codingSkills": 5
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Full Stack Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Minor deep-dive needed on edge-case telemetry."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Full Stack Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed exceptional mastery and standout technical acumen throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-11T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-11T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1015",
+    "candidateId": "CAND-115",
+    "candidateName": "Tariq Mansoor",
+    "candidateRole": "DevOps Engineer",
+    "interviewerId": "INT-005",
+    "interviewerName": "Kavita Nair",
+    "hiringManagerId": "HM-005",
+    "date": "2026-07-20",
+    "status": "Completed",
+    "mode": "MCQ",
+    "totalScore": 87,
+    "recommendation": "Strong Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 5,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of DevOps Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Minor deep-dive needed on edge-case telemetry."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in DevOps Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed exceptional mastery and standout technical acumen throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-20T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-20T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1016",
+    "candidateId": "CAND-116",
+    "candidateName": "Chloe Dubois",
+    "candidateRole": "GenAI Engineer",
+    "interviewerId": "INT-006",
+    "interviewerName": "Marcus Sterling",
+    "hiringManagerId": "HM-001",
+    "date": "2026-08-13",
+    "status": "Completed",
+    "mode": "Subjective",
+    "totalScore": 76,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 3,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of GenAI Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in GenAI Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": false,
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-13T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1017",
+    "candidateId": "CAND-117",
+    "candidateName": "Dmitri Ivanov",
+    "candidateRole": "AI Architect",
+    "interviewerId": "INT-007",
+    "interviewerName": "Emily Wong",
+    "hiringManagerId": "HM-002",
+    "date": "2026-08-08",
+    "status": "Completed",
+    "mode": "Hybrid",
+    "totalScore": 72,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of AI Architect paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in AI Architect methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-08-08T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-08T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1018",
+    "candidateId": "CAND-118",
+    "candidateName": "Aaliyah Brooks",
+    "candidateRole": "Data Engineer",
+    "interviewerId": "INT-008",
+    "interviewerName": "Nathaniel Price",
+    "hiringManagerId": "HM-003",
+    "date": "2026-08-13",
+    "status": "Completed",
+    "mode": "MCQ",
+    "totalScore": 73,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Data Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Data Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-08-13T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-13T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1019",
+    "candidateId": "CAND-119",
+    "candidateName": "Kenji Sato",
+    "candidateRole": "Full Stack Engineer",
+    "interviewerId": "INT-009",
+    "interviewerName": "Gary Larson",
+    "hiringManagerId": "HM-004",
+    "date": "2026-08-15",
+    "status": "Completed",
+    "mode": "Subjective",
+    "totalScore": 83,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Full Stack Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Full Stack Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-08-15T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-15T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1020",
+    "candidateId": "CAND-120",
+    "candidateName": "Oliver Wright",
+    "candidateRole": "DevOps Engineer",
+    "interviewerId": "INT-010",
+    "interviewerName": "Samantha Reed",
+    "hiringManagerId": "HM-005",
+    "date": "2026-07-15",
+    "status": "Feedback Pending",
+    "mode": "Hybrid",
+    "totalScore": 78,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 3,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of DevOps Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in DevOps Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": false,
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-15T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1021",
+    "candidateId": "CAND-101",
+    "candidateName": "Sebastian Miller",
+    "candidateRole": "GenAI Engineer",
+    "interviewerId": "INT-001",
+    "interviewerName": "Sarah Jenkins",
+    "hiringManagerId": "HM-001",
+    "date": "2026-08-07",
+    "status": "Completed",
+    "mode": "MCQ",
+    "totalScore": 81,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of GenAI Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in GenAI Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-08-07T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-07T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1022",
+    "candidateId": "CAND-102",
+    "candidateName": "Claire Fontaine",
+    "candidateRole": "AI Architect",
+    "interviewerId": "INT-002",
+    "interviewerName": "David Chen",
+    "hiringManagerId": "HM-002",
+    "date": "2026-07-20",
+    "status": "Completed",
+    "mode": "Subjective",
+    "totalScore": 74,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 3,
+      "communication": 4,
+      "architectureSkills": 3,
+      "codingSkills": 3
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of AI Architect paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in AI Architect methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-20T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-20T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1023",
+    "candidateId": "CAND-103",
+    "candidateName": "Devon Taylor",
+    "candidateRole": "Data Engineer",
+    "interviewerId": "INT-003",
+    "interviewerName": "Sophia Zhang",
+    "hiringManagerId": "HM-003",
+    "date": "2026-08-06",
+    "status": "Completed",
+    "mode": "Hybrid",
+    "totalScore": 83,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 5
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Data Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Data Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-08-06T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-06T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1024",
+    "candidateId": "CAND-104",
+    "candidateName": "Anya Petrov",
+    "candidateRole": "Full Stack Engineer",
+    "interviewerId": "INT-004",
+    "interviewerName": "Alex Rivera",
+    "hiringManagerId": "HM-004",
+    "date": "2026-08-02",
+    "status": "Completed",
+    "mode": "MCQ",
+    "totalScore": 75,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Full Stack Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Full Stack Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": false,
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-02T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1025",
+    "candidateId": "CAND-105",
+    "candidateName": "Gabriel Santos",
+    "candidateRole": "DevOps Engineer",
+    "interviewerId": "INT-005",
+    "interviewerName": "Kavita Nair",
+    "hiringManagerId": "HM-005",
+    "date": "2026-07-08",
+    "status": "Completed",
+    "mode": "Subjective",
+    "totalScore": 77,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of DevOps Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in DevOps Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-08T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-08T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1026",
+    "candidateId": "CAND-106",
+    "candidateName": "Fatima Al-Mansoor",
+    "candidateRole": "GenAI Engineer",
+    "interviewerId": "INT-006",
+    "interviewerName": "Marcus Sterling",
+    "hiringManagerId": "HM-001",
+    "date": "2026-06-28",
+    "status": "Completed",
+    "mode": "Hybrid",
+    "totalScore": 73,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 3,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of GenAI Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in GenAI Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-06-28T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-06-28T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1027",
+    "candidateId": "CAND-107",
+    "candidateName": "Lars Lindqvist",
+    "candidateRole": "AI Architect",
+    "interviewerId": "INT-007",
+    "interviewerName": "Emily Wong",
+    "hiringManagerId": "HM-002",
+    "date": "2026-07-31",
+    "status": "Completed",
+    "mode": "MCQ",
+    "totalScore": 82,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of AI Architect paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in AI Architect methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-31T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-31T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1028",
+    "candidateId": "CAND-108",
+    "candidateName": "Mei-Ling Zhou",
+    "candidateRole": "Data Engineer",
+    "interviewerId": "INT-008",
+    "interviewerName": "Nathaniel Price",
+    "hiringManagerId": "HM-003",
+    "date": "2026-06-27",
+    "status": "Completed",
+    "mode": "Subjective",
+    "totalScore": 81,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Data Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Data Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": false,
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-06-27T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1029",
+    "candidateId": "CAND-109",
+    "candidateName": "Arthur Pendelton",
+    "candidateRole": "Full Stack Engineer",
+    "interviewerId": "INT-009",
+    "interviewerName": "Gary Larson",
+    "hiringManagerId": "HM-004",
+    "date": "2026-07-25",
+    "status": "Completed",
+    "mode": "Hybrid",
+    "totalScore": 81,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Full Stack Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Full Stack Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-25T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-25T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1030",
+    "candidateId": "CAND-110",
+    "candidateName": "Naomi Osaka-Smith",
+    "candidateRole": "DevOps Engineer",
+    "interviewerId": "INT-010",
+    "interviewerName": "Samantha Reed",
+    "hiringManagerId": "HM-005",
+    "date": "2026-08-08",
+    "status": "Feedback Pending",
+    "mode": "MCQ",
+    "totalScore": 84,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 5,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of DevOps Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in DevOps Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-08-08T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-08T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1031",
+    "candidateId": "CAND-111",
+    "candidateName": "Isaac Newton-John",
+    "candidateRole": "GenAI Engineer",
+    "interviewerId": "INT-001",
+    "interviewerName": "Sarah Jenkins",
+    "hiringManagerId": "HM-001",
+    "date": "2026-07-20",
+    "status": "Completed",
+    "mode": "Subjective",
+    "totalScore": 82,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of GenAI Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in GenAI Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-20T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-20T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1032",
+    "candidateId": "CAND-112",
+    "candidateName": "Siddharth Rao",
+    "candidateRole": "AI Architect",
+    "interviewerId": "INT-002",
+    "interviewerName": "David Chen",
+    "hiringManagerId": "HM-002",
+    "date": "2026-07-16",
+    "status": "Completed",
+    "mode": "Hybrid",
+    "totalScore": 76,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of AI Architect paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in AI Architect methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": false,
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-16T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1033",
+    "candidateId": "CAND-113",
+    "candidateName": "Valeria Gomez",
+    "candidateRole": "Data Engineer",
+    "interviewerId": "INT-003",
+    "interviewerName": "Sophia Zhang",
+    "hiringManagerId": "HM-003",
+    "date": "2026-08-14",
+    "status": "Completed",
+    "mode": "MCQ",
+    "totalScore": 79,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 4,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Data Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Data Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-08-14T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-14T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1034",
+    "candidateId": "CAND-114",
+    "candidateName": "Kofi Annan-Boateng",
+    "candidateRole": "Full Stack Engineer",
+    "interviewerId": "INT-004",
+    "interviewerName": "Alex Rivera",
+    "hiringManagerId": "HM-004",
+    "date": "2026-06-22",
+    "status": "Completed",
+    "mode": "Subjective",
+    "totalScore": 78,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 4,
+      "problemSolving": 3,
+      "communication": 4,
+      "architectureSkills": 4,
+      "codingSkills": 4
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Full Stack Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Full Stack Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-06-22T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-06-22T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1035",
+    "candidateId": "CAND-115",
+    "candidateName": "Jonas Salk",
+    "candidateRole": "DevOps Engineer",
+    "interviewerId": "INT-005",
+    "interviewerName": "Kavita Nair",
+    "hiringManagerId": "HM-005",
+    "date": "2026-07-15",
+    "status": "Completed",
+    "mode": "Hybrid",
+    "totalScore": 70,
+    "recommendation": "Hire",
+    "competencyScores": {
+      "technicalKnowledge": 3,
+      "problemSolving": 3,
+      "communication": 3,
+      "architectureSkills": 4,
+      "codingSkills": 3
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of DevOps Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in DevOps Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed solid fundamentals and reliable execution capability throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-15T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-15T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1036",
+    "candidateId": "CAND-116",
+    "candidateName": "Hanna Vance",
+    "candidateRole": "GenAI Engineer",
+    "interviewerId": "INT-006",
+    "interviewerName": "Marcus Sterling",
+    "hiringManagerId": "HM-001",
+    "date": "2026-06-25",
+    "status": "Completed",
+    "mode": "MCQ",
+    "totalScore": 56,
+    "recommendation": "Borderline",
+    "competencyScores": {
+      "technicalKnowledge": 3,
+      "problemSolving": 3,
+      "communication": 2,
+      "architectureSkills": 3,
+      "codingSkills": 3
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of GenAI Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in GenAI Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed acceptable baseline skills but clear depth gaps throughout the structured evaluation."
+    },
+    "workdaySynced": false,
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-06-25T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1037",
+    "candidateId": "CAND-117",
+    "candidateName": "Kareem Abdul-Jabbar",
+    "candidateRole": "AI Architect",
+    "interviewerId": "INT-007",
+    "interviewerName": "Emily Wong",
+    "hiringManagerId": "HM-002",
+    "date": "2026-07-22",
+    "status": "Completed",
+    "mode": "Subjective",
+    "totalScore": 65,
+    "recommendation": "Borderline",
+    "competencyScores": {
+      "technicalKnowledge": 3,
+      "problemSolving": 3,
+      "communication": 4,
+      "architectureSkills": 3,
+      "codingSkills": 3
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of AI Architect paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in AI Architect methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed acceptable baseline skills but clear depth gaps throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-22T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-22T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1038",
+    "candidateId": "CAND-118",
+    "candidateName": "Silvia Rossi",
+    "candidateRole": "Data Engineer",
+    "interviewerId": "INT-008",
+    "interviewerName": "Nathaniel Price",
+    "hiringManagerId": "HM-003",
+    "date": "2026-07-29",
+    "status": "Completed",
+    "mode": "Hybrid",
+    "totalScore": 53,
+    "recommendation": "Borderline",
+    "competencyScores": {
+      "technicalKnowledge": 2,
+      "problemSolving": 2,
+      "communication": 2,
+      "architectureSkills": 3,
+      "codingSkills": 3
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Data Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Data Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed acceptable baseline skills but clear depth gaps throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-29T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-29T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1039",
+    "candidateId": "CAND-119",
+    "candidateName": "Thabo Mbeki",
+    "candidateRole": "Full Stack Engineer",
+    "interviewerId": "INT-009",
+    "interviewerName": "Gary Larson",
+    "hiringManagerId": "HM-004",
+    "date": "2026-07-31",
+    "status": "Completed",
+    "mode": "MCQ",
+    "totalScore": 64,
+    "recommendation": "Borderline",
+    "competencyScores": {
+      "technicalKnowledge": 3,
+      "problemSolving": 3,
+      "communication": 4,
+      "architectureSkills": 3,
+      "codingSkills": 3
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Full Stack Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Full Stack Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed acceptable baseline skills but clear depth gaps throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-31T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-31T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1040",
+    "candidateId": "CAND-120",
+    "candidateName": "Hiroshi Tanaka",
+    "candidateRole": "DevOps Engineer",
+    "interviewerId": "INT-010",
+    "interviewerName": "Samantha Reed",
+    "hiringManagerId": "HM-005",
+    "date": "2026-07-08",
+    "status": "Feedback Pending",
+    "mode": "Subjective",
+    "totalScore": 61,
+    "recommendation": "Borderline",
+    "competencyScores": {
+      "technicalKnowledge": 3,
+      "problemSolving": 3,
+      "communication": 3,
+      "architectureSkills": 3,
+      "codingSkills": 3
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of DevOps Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in DevOps Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed acceptable baseline skills but clear depth gaps throughout the structured evaluation."
+    },
+    "workdaySynced": false,
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-08T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1041",
+    "candidateId": "CAND-101",
+    "candidateName": "Leila Benali",
+    "candidateRole": "GenAI Engineer",
+    "interviewerId": "INT-001",
+    "interviewerName": "Sarah Jenkins",
+    "hiringManagerId": "HM-001",
+    "date": "2026-07-26",
+    "status": "Completed",
+    "mode": "Hybrid",
+    "totalScore": 56,
+    "recommendation": "Borderline",
+    "competencyScores": {
+      "technicalKnowledge": 3,
+      "problemSolving": 3,
+      "communication": 3,
+      "architectureSkills": 3,
+      "codingSkills": 3
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of GenAI Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in GenAI Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed acceptable baseline skills but clear depth gaps throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-26T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-26T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1042",
+    "candidateId": "CAND-102",
+    "candidateName": "Mateo Hernandez",
+    "candidateRole": "AI Architect",
+    "interviewerId": "INT-002",
+    "interviewerName": "David Chen",
+    "hiringManagerId": "HM-002",
+    "date": "2026-08-13",
+    "status": "Completed",
+    "mode": "MCQ",
+    "totalScore": 58,
+    "recommendation": "Borderline",
+    "competencyScores": {
+      "technicalKnowledge": 3,
+      "problemSolving": 3,
+      "communication": 3,
+      "architectureSkills": 3,
+      "codingSkills": 3
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of AI Architect paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in AI Architect methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed acceptable baseline skills but clear depth gaps throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-08-13T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-13T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1043",
+    "candidateId": "CAND-103",
+    "candidateName": "Evelyn Reed",
+    "candidateRole": "Data Engineer",
+    "interviewerId": "INT-003",
+    "interviewerName": "Sophia Zhang",
+    "hiringManagerId": "HM-003",
+    "date": "2026-07-22",
+    "status": "Completed",
+    "mode": "Subjective",
+    "totalScore": 65,
+    "recommendation": "Borderline",
+    "competencyScores": {
+      "technicalKnowledge": 3,
+      "problemSolving": 3,
+      "communication": 3,
+      "architectureSkills": 3,
+      "codingSkills": 3
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Data Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Data Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed acceptable baseline skills but clear depth gaps throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-22T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-22T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1044",
+    "candidateId": "CAND-104",
+    "candidateName": "Dante Alighieri",
+    "candidateRole": "Full Stack Engineer",
+    "interviewerId": "INT-004",
+    "interviewerName": "Alex Rivera",
+    "hiringManagerId": "HM-004",
+    "date": "2026-07-06",
+    "status": "Completed",
+    "mode": "Hybrid",
+    "totalScore": 55,
+    "recommendation": "Borderline",
+    "competencyScores": {
+      "technicalKnowledge": 3,
+      "problemSolving": 3,
+      "communication": 2,
+      "architectureSkills": 3,
+      "codingSkills": 3
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Full Stack Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Full Stack Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed acceptable baseline skills but clear depth gaps throughout the structured evaluation."
+    },
+    "workdaySynced": false,
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-06T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1045",
+    "candidateId": "CAND-105",
+    "candidateName": "Nadia Boulanger",
+    "candidateRole": "DevOps Engineer",
+    "interviewerId": "INT-005",
+    "interviewerName": "Kavita Nair",
+    "hiringManagerId": "HM-005",
+    "date": "2026-08-15",
+    "status": "Completed",
+    "mode": "MCQ",
+    "totalScore": 63,
+    "recommendation": "Borderline",
+    "competencyScores": {
+      "technicalKnowledge": 3,
+      "problemSolving": 3,
+      "communication": 3,
+      "architectureSkills": 3,
+      "codingSkills": 3
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of DevOps Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in DevOps Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed acceptable baseline skills but clear depth gaps throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-08-15T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-15T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1046",
+    "candidateId": "CAND-106",
+    "candidateName": "Willem Dafoe-Lee",
+    "candidateRole": "GenAI Engineer",
+    "interviewerId": "INT-006",
+    "interviewerName": "Marcus Sterling",
+    "hiringManagerId": "HM-001",
+    "date": "2026-06-27",
+    "status": "Completed",
+    "mode": "Subjective",
+    "totalScore": 45,
+    "recommendation": "No Hire",
+    "competencyScores": {
+      "technicalKnowledge": 2,
+      "problemSolving": 2,
+      "communication": 2,
+      "architectureSkills": 2,
+      "codingSkills": 2
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of GenAI Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in GenAI Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed significant knowledge gaps throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-06-27T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-06-27T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1047",
+    "candidateId": "CAND-107",
+    "candidateName": "Grace Hopper-Diaz",
+    "candidateRole": "AI Architect",
+    "interviewerId": "INT-007",
+    "interviewerName": "Emily Wong",
+    "hiringManagerId": "HM-002",
+    "date": "2026-06-30",
+    "status": "Completed",
+    "mode": "Hybrid",
+    "totalScore": 36,
+    "recommendation": "No Hire",
+    "competencyScores": {
+      "technicalKnowledge": 2,
+      "problemSolving": 2,
+      "communication": 2,
+      "architectureSkills": 2,
+      "codingSkills": 2
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of AI Architect paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in AI Architect methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed significant knowledge gaps throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-06-30T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-06-30T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1048",
+    "candidateId": "CAND-108",
+    "candidateName": "Alan Turing-Lin",
+    "candidateRole": "Data Engineer",
+    "interviewerId": "INT-008",
+    "interviewerName": "Nathaniel Price",
+    "hiringManagerId": "HM-003",
+    "date": "2026-07-12",
+    "status": "Completed",
+    "mode": "MCQ",
+    "totalScore": 48,
+    "recommendation": "No Hire",
+    "competencyScores": {
+      "technicalKnowledge": 2,
+      "problemSolving": 2,
+      "communication": 2,
+      "architectureSkills": 2,
+      "codingSkills": 3
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Data Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Data Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed significant knowledge gaps throughout the structured evaluation."
+    },
+    "workdaySynced": false,
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-12T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1049",
+    "candidateId": "CAND-109",
+    "candidateName": "Ada Lovelace-Park",
+    "candidateRole": "Full Stack Engineer",
+    "interviewerId": "INT-009",
+    "interviewerName": "Gary Larson",
+    "hiringManagerId": "HM-004",
+    "date": "2026-08-04",
+    "status": "Completed",
+    "mode": "Subjective",
+    "totalScore": 40,
+    "recommendation": "No Hire",
+    "competencyScores": {
+      "technicalKnowledge": 2,
+      "problemSolving": 2,
+      "communication": 2,
+      "architectureSkills": 2,
+      "codingSkills": 2
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of Full Stack Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in Full Stack Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed significant knowledge gaps throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-08-04T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-08-04T16:31:00Z"
+  },
+  {
+    "id": "INT-REC-1050",
+    "candidateId": "CAND-110",
+    "candidateName": "Claude Shannon-Roy",
+    "candidateRole": "DevOps Engineer",
+    "interviewerId": "INT-010",
+    "interviewerName": "Samantha Reed",
+    "hiringManagerId": "HM-005",
+    "date": "2026-07-07",
+    "status": "Feedback Pending",
+    "mode": "Hybrid",
+    "totalScore": 45,
+    "recommendation": "No Hire",
+    "competencyScores": {
+      "technicalKnowledge": 2,
+      "problemSolving": 2,
+      "communication": 2,
+      "architectureSkills": 2,
+      "codingSkills": 2
+    },
+    "summary": {
+      "strengths": [
+        "Demonstrated crisp command of DevOps Engineer paradigms and modern toolchains.",
+        "Articulated system trade-offs with structured, first-principles logic.",
+        "Proactively addressed scalability, latency, and edge failure modes."
+      ],
+      "weaknesses": [
+        "Needs deeper familiarity with production incident triage.",
+        "Could strengthen knowledge of multi-region replication mechanics."
+      ],
+      "keyObservations": [
+        "Strong cultural alignment with engineering rigor; confident in DevOps Engineer methodologies.",
+        "Quickly incorporated interviewer hints and adjusted design proposals."
+      ],
+      "areasForImprovement": [
+        "Hands-on practice with extreme high-concurrency stress testing.",
+        "Expanding cross-functional architectural documentation."
+      ],
+      "overallSummary": "Candidate displayed significant knowledge gaps throughout the structured evaluation."
+    },
+    "workdaySynced": true,
+    "workdaySyncTimestamp": "2026-07-07T16:30:00Z",
+    "slackNotified": true,
+    "slackNotificationTimestamp": "2026-07-07T16:31:00Z"
+  }
+]

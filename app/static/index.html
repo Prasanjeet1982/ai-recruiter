@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InterviewIQ™ - Enterprise AI Interview Platform (Python POC)</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-600 selection:text-white flex flex-col min-h-screen">
+
+  <!-- Top Navbar -->
+  <header class="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/95 backdrop-blur-md shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Brand & Logo -->
+        <div class="flex items-center gap-3 cursor-pointer" onclick="app.navigate('recruiter')">
+          <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-500 p-[2px] shadow-md shadow-blue-500/20">
+            <div class="h-full w-full bg-white rounded-[10px] flex items-center justify-center">
+              <i data-lucide="sparkles" class="text-blue-600 w-5 h-5"></i>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-heading font-extrabold text-lg tracking-tight text-slate-900">
+                Interview<span class="text-blue-600">IQ</span>
+              </span>
+              <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
+                Python Native POC
+              </span>
+            </div>
+            <p class="text-xs text-slate-500 font-medium">FastAPI &bull; Pydantic &bull; Rule-Based Intelligence</p>
+          </div>
+        </div>
+
+        <!-- Persona Switcher -->
+        <div class="hidden lg:flex items-center gap-1 p-1 rounded-xl bg-slate-100 border border-slate-200">
+          <span class="text-xs font-semibold text-slate-500 px-2.5 flex items-center gap-1">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-blue-600"></i> Persona:
+          </span>
+          <button id="btn-persona-recruiter" onclick="app.setPersona('Recruiter')" class="px-3 py-1 text-xs font-semibold rounded-lg bg-blue-600 text-white shadow-xs">Recruiter</button>
+          <button id="btn-persona-interviewer" onclick="app.setPersona('Interviewer')" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-200">Interviewer</button>
+          <button id="btn-persona-hm" onclick="app.setPersona('Hiring Manager')" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-200">Hiring Manager</button>
+        </div>
+
+        <!-- Top Actions -->
+        <div class="flex items-center gap-3">
+          <button onclick="app.resetDemoData()" title="Reset all datasets and demo state" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-lg transition-all">
+            <i data-lucide="rotate-ccw" class="w-3.5 h-3.5 text-slate-500"></i>
+            <span>Reset Demo</span>
+          </button>
+
+          <div id="active-session-pill" onclick="app.navigate('interview')" class="hidden cursor-pointer flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-700 text-xs font-bold shadow-xs hover:bg-emerald-100 transition-all">
+            <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+            <span id="session-candidate-label">Session Active</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="flex space-x-1.5 overflow-x-auto py-2 border-t border-slate-100 no-scrollbar">
+        <button id="tab-recruiter" onclick="app.navigate('recruiter')" class="nav-tab flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg whitespace-nowrap bg-blue-600 text-white shadow-xs">
+          <i data-lucide="users" class="w-3.5 h-3.5"></i>
+          <span>Recruiter Dashboard</span>
+        </button>
+        <button id="tab-hiringManager" onclick="app.navigate('hiringManager')" class="nav-tab flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+          <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+          <span>Hiring Manager</span>
+        </button>
+        <button id="tab-interview" onclick="app.navigate('interview')" class="nav-tab flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+          <i data-lucide="bot" class="w-3.5 h-3.5"></i>
+          <span>Live AI Copilot</span>
+        </button>
+        <button id="tab-scorecard" onclick="app.navigate('scorecard')" class="nav-tab flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+          <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+          <span>Scorecard & Summary</span>
+        </button>
+        <button id="tab-questions" onclick="app.navigate('questions')" class="nav-tab flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+          <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+          <span>Question Bank (100+)</span>
+        </button>
+        <button id="tab-workday" onclick="app.navigate('workday')" class="nav-tab flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+          <i data-lucide="building-2" class="w-3.5 h-3.5"></i>
+          <span>Workday HCM</span>
+        </button>
+        <button id="tab-slack" onclick="app.navigate('slack')" class="nav-tab flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+          <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+          <span>Slack Connect</span>
+        </button>
+        <a href="/docs" target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg hover:bg-indigo-100 whitespace-nowrap ml-auto">
+          <i data-lucide="code-2" class="w-3.5 h-3.5"></i>
+          <span>Swagger API Docs</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 10-Step Guided Executive Tour Banner -->
+  <aside aria-label="Executive Demo Flow Guide" class="border-b border-blue-100 bg-blue-50/80 text-slate-800 shadow-2xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-600 text-white text-xs font-bold shadow-xs">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-200"></i>
+            <span>EXECUTIVE DEMO FLOW</span>
+          </div>
+          <span id="demo-step-text" class="text-xs text-slate-700 hidden md:inline font-medium">
+            Step 1 of 10: <strong class="text-blue-900 font-bold">Select Candidate</strong> &mdash; Choose a candidate from the Recruiter Pipeline
+          </span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="btn-prev-step" onclick="app.prevDemoStep()" class="px-2 py-1 rounded-md border border-slate-300 bg-white text-xs text-slate-700 hover:bg-slate-50 font-medium">Prev</button>
+          <button id="btn-next-step" onclick="app.nextDemoStep()" class="px-3 py-1 rounded-md bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 shadow-sm flex items-center gap-1">
+            <span>Next Step</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 10 Steps Grid -->
+      <div id="demo-steps-container" class="mt-2 pt-2 border-t border-blue-100 grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 gap-1.5">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main View Container -->
+  <main id="app-viewport" class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <!-- Dynamic View Content will be loaded here -->
+  </main>
+
+  <!-- Modals Container -->
+  <div id="modal-root"></div>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white py-4 px-4 sm:px-6 lg:px-8 text-xs text-slate-500 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+        <span class="font-semibold text-slate-700">InterviewIQ™ Platform (Python Edition)</span>
+        <span class="text-slate-400">&bull;</span>
+        <span>FastAPI + Pydantic + Uvicorn</span>
+      </div>
+
+      <div class="flex items-center gap-4 text-[11px] text-slate-500">
+        <span class="flex items-center gap-1 font-medium text-slate-600">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-blue-600"></i>
+          100% Local Rule-Based Architecture
+        </span>
+        <span>&bull;</span>
+        <span>Zero Node.js / Zero External AI Dependencies</span>
+        <span>&bull;</span>
+        <span class="font-mono text-slate-600 font-semibold">Python-v1.0</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Client Logic -->
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

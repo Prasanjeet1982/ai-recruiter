@@ -1,0 +1,106 @@
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Outfit', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --bg-primary: #f8fafc;
+  --bg-card: #ffffff;
+  --border-subtle: #e2e8f0;
+  --accent-blue: #2563eb;
+  --accent-indigo: #4f46e5;
+  --accent-emerald: #059669;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: #0f172a;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Card & Panel Styling */
+.card-clean {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.card-interactive {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.card-interactive:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Audio Waveform Bars Animation */
+@keyframes waveAnimation {
+  0%, 100% { height: 6px; }
+  50% { height: 26px; }
+}
+
+.waveform-bar {
+  display: inline-block;
+  width: 3px;
+  background: #0284c7;
+  border-radius: 3px;
+  animation: waveAnimation 1.2s ease-in-out infinite;
+}
+
+.waveform-bar:nth-child(2) { animation-delay: 0.15s; }
+.waveform-bar:nth-child(3) { animation-delay: 0.3s; }
+.waveform-bar:nth-child(4) { animation-delay: 0.45s; }
+.waveform-bar:nth-child(5) { animation-delay: 0.6s; }
+.waveform-bar:nth-child(6) { animation-delay: 0.25s; }
+.waveform-bar:nth-child(7) { animation-delay: 0.5s; }
+.waveform-bar:nth-child(8) { animation-delay: 0.35s; }
+
+/* Pulsing Badge Indicator */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.96);
+    box-shadow: 0 0 3px rgba(37, 99, 235, 0.3);
+  }
+}
+
+.pulse-ai {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}

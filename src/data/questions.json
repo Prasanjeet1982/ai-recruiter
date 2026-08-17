@@ -1,0 +1,1941 @@
+[
+  {
+    "questionId": "GENAI-001",
+    "role": "GenAI Engineer",
+    "difficulty": "Advanced",
+    "questionType": "Subjective",
+    "competency": "Technical Knowledge",
+    "question": "How does LoRA (Low-Rank Adaptation) enable parameter-efficient fine-tuning of large language models, and how do you choose rank r and alpha?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Deep Mathematical & Practical Mastery)",
+        "transcript": "LoRA freezes pre-trained weights W_0 and injects trainable rank decomposition matrices A and B (W = W_0 + (alpha/r)*B*A). Matrix B is zero-initialized, A is Gaussian. Rank r is chosen between 8-64 depending on task complexity; alpha is set to 2*r. Merging weights post-training eliminates any inference latency penalty.",
+        "score": 10,
+        "strength": "Precise formula, matrix initialization logic, and practical hyperparameter guidelines.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How does QLoRA 4-bit NormalFloat compare to LoRA?",
+          "How do you avoid catastrophic forgetting during adaptation?"
+        ]
+      },
+      {
+        "id": "resp_b",
+        "label": "Response B (Solid Understanding)",
+        "transcript": "LoRA freezes the base model and trains small adapter matrices. It cuts memory usage dramatically. Rank r controls the size of the adapter and alpha is a multiplier. You can merge weights for inference.",
+        "score": 7,
+        "strength": "Good understanding of frozen weights and adapter merging.",
+        "weakness": "Omitted matrix initialization details and scaling math.",
+        "followUpQuestions": [
+          "Why is matrix B initialized to zeros?",
+          "What happens if rank r is too high?"
+        ]
+      },
+      {
+        "id": "resp_c",
+        "label": "Response C (Surface Level)",
+        "transcript": "LoRA trains small adapter weights instead of the full model. It saves GPU memory so you can train on smaller GPUs using Hugging Face PEFT.",
+        "score": 4,
+        "strength": "Understands memory savings and PEFT tooling.",
+        "weakness": "Lacks architectural mechanics and matrix decomposition understanding.",
+        "followUpQuestions": [
+          "What does rank r represent in matrix math?",
+          "How does LoRA differ from full fine-tuning?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "GENAI-002",
+    "role": "GenAI Engineer",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Architecture Skills",
+    "question": "When deploying high-throughput LLM inference with vLLM, which mechanism eliminates KV-cache memory fragmentation?",
+    "options": [
+      "FlashAttention v2 chunking",
+      "PagedAttention with virtual memory block allocation",
+      "Rotary Positional Embedding (RoPE) compression",
+      "ZeRO-3 optimizer offloading"
+    ],
+    "correctAnswer": "PagedAttention with virtual memory block allocation",
+    "explanation": "PagedAttention partitions the KV cache into fixed-size virtual blocks, eliminating internal and external memory fragmentation.",
+    "score": 10
+  },
+  {
+    "questionId": "GENAI-003",
+    "role": "GenAI Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "Subjective",
+    "competency": "Problem Solving",
+    "question": "How do you mitigate hallucinations in an enterprise Retrieval-Augmented Generation (RAG) system handling legal and financial queries?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Multi-Layer Defense)",
+        "transcript": "We implement a 4-tier pipeline: 1) Hybrid retrieval (dense embeddings + BM25) with cross-encoder reranking. 2) Grounded system prompts enforcing strict citation. 3) Output guardrails (NeMo Guardrails / Guardrails AI). 4) Automated verification using RAGAS Faithfulness metrics with confidence thresholding.",
+        "score": 9,
+        "strength": "Covers ingestion, hybrid search, reranking, guardrails, and RAGAS metrics.",
+        "weakness": "Could expand on resolving contradictory multi-document facts.",
+        "followUpQuestions": [
+          "How do you handle contradictory documents in retrieval?",
+          "What is the latency cost of cross-encoder reranking?"
+        ]
+      },
+      {
+        "id": "resp_b",
+        "label": "Response B (Prompt & Parameter Tuning)",
+        "transcript": "We set temperature to 0, use strict system prompts telling the model only to use context, and use smaller 512-token chunks with 50-token overlap.",
+        "score": 6,
+        "strength": "Good practical basics (temp 0, chunk overlap).",
+        "weakness": "Lacks evaluation metrics, rerankers, or output guardrail layers.",
+        "followUpQuestions": [
+          "Why can high top-k retrieval increase hallucinations?",
+          "How do you systematically benchmark RAG accuracy?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "GENAI-004",
+    "role": "GenAI Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "Which evaluation metric in the RAGAS framework measures whether the generated answer is strictly grounded in retrieved context?",
+    "options": [
+      "Context Recall",
+      "Answer Relevance",
+      "Faithfulness",
+      "Context Precision"
+    ],
+    "correctAnswer": "Faithfulness",
+    "explanation": "Faithfulness evaluates whether every claim in the response is supported by the retrieved context chunks.",
+    "score": 10
+  },
+  {
+    "questionId": "GENAI-005",
+    "role": "GenAI Engineer",
+    "difficulty": "Advanced",
+    "questionType": "Scenario",
+    "competency": "Architecture Skills",
+    "question": "How would you architect this multi-agent tool-calling system to guarantee state persistence, idempotency, and human-in-the-loop oversight?",
+    "scenarioContext": "An enterprise customer service agent needs to perform multi-step actions: query orders via REST, check inventory via SQL, and issue refunds up to $100 autonomously while escalating higher amounts.",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (State-Graph Architecture)",
+        "transcript": "Implement a state graph using LangGraph with persistent checkpointers. Use strict Pydantic JSON tool schemas, idempotency keys for API calls, and a conditional gate that halts refunds >$100, transitions to WAITING_APPROVAL, and dispatches a Slack approval webhook.",
+        "score": 10,
+        "strength": "Comprehensive state machine, idempotency guarantees, and webhook approval hook.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How do you handle API timeouts during intermediate steps?",
+          "How is state serialized in distributed workers?"
+        ]
+      },
+      {
+        "id": "resp_b",
+        "label": "Response B (Simple Function Calling)",
+        "transcript": "Use OpenAI function calling in a while loop. Check if refund > 100, then send an email to the supervisor before calling the tool.",
+        "score": 6,
+        "strength": "Basic understanding of function calling and threshold logic.",
+        "weakness": "Lacks state checkpointing, crash recovery, and idempotency.",
+        "followUpQuestions": [
+          "What happens if the server crashes during execution?",
+          "How do you secure SQL queries against injection?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "GENAI-006",
+    "role": "GenAI Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the primary role of the 'temperature' parameter in autoregressive LLMs?",
+    "options": [
+      "Controls the maximum token length of output",
+      "Scales logits before softmax to adjust probability entropy and creativity",
+      "Sets CPU cooling fan speeds",
+      "Filters tokens based on frequency"
+    ],
+    "correctAnswer": "Scales logits before softmax to adjust probability entropy and creativity",
+    "explanation": "Temperature divides logits prior to softmax; lower values yield deterministic outputs while higher values increase randomness.",
+    "score": 10
+  },
+  {
+    "questionId": "GENAI-007",
+    "role": "GenAI Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "In PyTorch, which precision format provides the same dynamic range as FP32 while halving memory footprint without requiring loss scaling?",
+    "options": [
+      "FP16",
+      "BF16 (Bfloat16)",
+      "INT8",
+      "FP4"
+    ],
+    "correctAnswer": "BF16 (Bfloat16)",
+    "explanation": "BF16 has an 8-bit exponent identical to FP32, maintaining full dynamic range without underflow issues.",
+    "score": 10
+  },
+  {
+    "questionId": "GENAI-008",
+    "role": "GenAI Engineer",
+    "difficulty": "Advanced",
+    "questionType": "Subjective",
+    "competency": "Coding Skills",
+    "question": "How do you implement streaming Server-Sent Events (SSE) for LLMs in FastAPI with graceful client disconnect handling?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Robust Streaming)",
+        "transcript": "Use FastAPI StreamingResponse with text/event-stream. Wrap an async generator consuming the LLM stream. Format chunks as 'data: {json}\\n\\n'. Wrap iteration in try/finally to catch client disconnects via request.is_disconnected() or asyncio.CancelledError, immediately aborting upstream GPU inference.",
+        "score": 10,
+        "strength": "Proper SSE formatting, async generator, and GPU compute abort on client disconnect.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How do you batch tokens to reduce HTTP packet overhead?",
+          "How do you handle backpressure in slow clients?"
+        ]
+      },
+      {
+        "id": "resp_b",
+        "label": "Response B (Basic Streaming)",
+        "transcript": "Return a StreamingResponse with media type event-stream and yield tokens from a loop over the model stream.",
+        "score": 6,
+        "strength": "Uses StreamingResponse.",
+        "weakness": "Misses SSE line protocol and disconnect cancellation.",
+        "followUpQuestions": [
+          "What happens to GPU memory if client closes tab?",
+          "What is the SSE protocol delimiter?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "GENAI-009",
+    "role": "GenAI Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "Which vector distance metric is mathematically equivalent to Cosine Similarity when embedding vectors are normalized to unit length?",
+    "options": [
+      "Dot Product (Inner Product)",
+      "Manhattan Distance (L1)",
+      "Minkowski Distance",
+      "Hamming Distance"
+    ],
+    "correctAnswer": "Dot Product (Inner Product)",
+    "explanation": "When ||A|| = ||B|| = 1, Dot Product equals Cosine Similarity and is faster to compute.",
+    "score": 10
+  },
+  {
+    "questionId": "GENAI-010",
+    "role": "GenAI Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Problem Solving",
+    "question": "When chunking Markdown documents containing complex tables for RAG, what is the best strategy?",
+    "options": [
+      "Fixed character chunking every 200 chars",
+      "Structure-aware chunking preserving tables as atomic units with section headers",
+      "Stripping tables completely",
+      "Converting tables to raw images only"
+    ],
+    "correctAnswer": "Structure-aware chunking preserving tables as atomic units with section headers",
+    "explanation": "Structure-aware chunking retains table rows/columns together and attaches hierarchical headers for context.",
+    "score": 10
+  },
+  {
+    "questionId": "GENAI-011",
+    "role": "GenAI Engineer",
+    "difficulty": "Advanced",
+    "questionType": "Subjective",
+    "competency": "Architecture Skills",
+    "question": "Explain the differences between Dense Retrieval, Sparse Retrieval (BM25), and Hybrid Search with Reciprocal Rank Fusion (RRF).",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Deep Algorithmic Comparison)",
+        "transcript": "Dense retrieval captures semantic meaning but misses exact keywords/IDs. Sparse (BM25) excels at exact keyword matching. Hybrid search executes both in parallel and merges rankings using RRF: Score = sum(1 / (k + rank_i)), where k=60. This combines conceptual recall with exact lexical precision.",
+        "score": 10,
+        "strength": "Clear formula, failure modes identified, and practical constant value.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How does SPLADE improve over BM25?",
+          "When should you add a Cross-Encoder reranker?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "GENAI-012",
+    "role": "GenAI Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What does 'Tokenization' refer to in LLMs?",
+    "options": [
+      "Encrypting API access tokens",
+      "Decomposing raw text into discrete sub-word integers mapped to vocabulary IDs",
+      "Authenticating users via JWT",
+      "Splitting database records"
+    ],
+    "correctAnswer": "Decomposing raw text into discrete sub-word integers mapped to vocabulary IDs",
+    "explanation": "Tokenization converts text into integer token IDs based on Byte-Pair Encoding or WordPiece.",
+    "score": 10
+  },
+  {
+    "questionId": "GENAI-013",
+    "role": "GenAI Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "Which quantization method uses activation-aware weight quantization to preserve salient weights in LLMs?",
+    "options": [
+      "AWQ (Activation-aware Weight Quantization)",
+      "Naive round-to-nearest int",
+      "FP32 baseline",
+      "Lossy JPEG compression"
+    ],
+    "correctAnswer": "AWQ (Activation-aware Weight Quantization)",
+    "explanation": "AWQ identifies the 1% most salient weight channels based on activation magnitudes and protects them from quantization error.",
+    "score": 10
+  },
+  {
+    "questionId": "GENAI-014",
+    "role": "GenAI Engineer",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Architecture Skills",
+    "question": "How does Direct Preference Optimization (DPO) simplify alignment compared to PPO-based RLHF?",
+    "options": [
+      "Eliminates the need for a separate reward model and reinforcement learning training loop",
+      "Uses genetic algorithms instead of gradient descent",
+      "Removes the requirement for preference datasets",
+      "Disables backpropagation"
+    ],
+    "correctAnswer": "Eliminates the need for a separate reward model and reinforcement learning training loop",
+    "explanation": "DPO implicitly reparameterizes the reward function, directly optimizing the policy model via cross-entropy loss.",
+    "score": 10
+  },
+  {
+    "questionId": "GENAI-015",
+    "role": "GenAI Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "Subjective",
+    "competency": "Problem Solving",
+    "question": "How do you protect LLM applications from Prompt Injection and Jailbreak attacks?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Layered Security)",
+        "transcript": "Multi-layered defense: 1) Input classification using guard models (Llama Guard). 2) Structural XML/Markdown delimiters isolating untrusted user input. 3) Output factuality and PII scanning. 4) Least-privilege tool execution permissions.",
+        "score": 10,
+        "strength": "Covers input sandboxing, structural delimiters, output validation, and scoped tool permissions.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How do you defend against indirect prompt injection in scraped web content?",
+          "What is the latency impact of guard models?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "GENAI-016",
+    "role": "GenAI Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is 'Few-Shot Prompting'?",
+    "options": [
+      "Providing a few input-output demonstration examples inside the prompt",
+      "Training a model for only 3 epochs",
+      "Compressing a model to 3-bit weights",
+      "Making 3 API requests per second"
+    ],
+    "correctAnswer": "Providing a few input-output demonstration examples inside the prompt",
+    "explanation": "Few-shot prompting conditions the model by providing illustrative examples before the target question.",
+    "score": 10
+  },
+  {
+    "questionId": "GENAI-017",
+    "role": "GenAI Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the primary mechanism behind Speculative Decoding?",
+    "options": [
+      "Using a fast small draft model to generate tokens that are verified in parallel by the target LLM",
+      "Skipping attention layers randomly",
+      "Predicting future user questions before they type",
+      "Using quantum computing"
+    ],
+    "correctAnswer": "Using a fast small draft model to generate tokens that are verified in parallel by the target LLM",
+    "explanation": "Speculative decoding generates candidate tokens with a tiny model and verifies them in a single target forward pass.",
+    "score": 10
+  },
+  {
+    "questionId": "GENAI-018",
+    "role": "GenAI Engineer",
+    "difficulty": "Advanced",
+    "questionType": "Subjective",
+    "competency": "Technical Knowledge",
+    "question": "Explain the architecture of Mixture of Experts (MoE) models (e.g. Mixtral 8x7B).",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Routing & Gating Mechanics)",
+        "transcript": "MoE replaces dense FFN layers with N expert sub-networks and a learned Gating router. For each token, the router computes Top-K softmax (e.g. Top-2 out of 8). Only active experts compute, providing massive parameter capacity at low FLOP cost. Load-balancing loss prevents routing collapse.",
+        "score": 10,
+        "strength": "Distinguishes active vs total parameters, Top-K per-token gating, and auxiliary loss.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How does MoE affect VRAM requirements during inference?",
+          "How does expert parallelism work across multi-GPU nodes?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "GENAI-019",
+    "role": "GenAI Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "In the OpenAI/Anthropic SDKs, which parameter guarantees output adherence to a structured JSON schema?",
+    "options": [
+      "response_format with json_schema",
+      "enforce_json=True",
+      "temperature=0.0",
+      "stream=False"
+    ],
+    "correctAnswer": "response_format with json_schema",
+    "explanation": "Constrained grammar decoding forces LLM logits to only sample valid tokens according to the provided schema.",
+    "score": 10
+  },
+  {
+    "questionId": "GENAI-020",
+    "role": "GenAI Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Problem Solving",
+    "question": "What does 'Needle In A Haystack' (NIAH) testing evaluate in Large Language Models?",
+    "options": [
+      "Information retrieval accuracy of specific facts at various depths across long context windows",
+      "GPU power consumption",
+      "Vector database query latency",
+      "SQL injection risks"
+    ],
+    "correctAnswer": "Information retrieval accuracy of specific facts at various depths across long context windows",
+    "explanation": "NIAH tests whether an LLM can accurately retrieve specific facts placed at arbitrary context depths (e.g. 10%, 50%, 90%).",
+    "score": 10
+  },
+  {
+    "questionId": "ARCH-001",
+    "role": "AI Architect",
+    "difficulty": "Advanced",
+    "questionType": "Subjective",
+    "competency": "Architecture Skills",
+    "question": "How would you design a multi-tenant Enterprise LLM Gateway supporting 50 internal applications with semantic caching, rate limiting, DLP/PII redaction, and intelligent model routing?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Enterprise Architecture)",
+        "transcript": "Architect a gateway in Go/Rust behind Envoy: 1) JWT auth with Redis token bucket quotas. 2) DLP pipeline with Presidio masking PII. 3) Redis semantic vector cache (similarity >0.96) reducing costs by 35%. 4) Smart router dispatching simple queries to 8B models and complex tasks to frontier models with automated failover. 5) OpenTelemetry tracing for token and cost analytics.",
+        "score": 10,
+        "strength": "Covers auth, DLP, semantic caching, tiered routing, and observability.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How do you handle semantic cache invalidation?",
+          "How do you enforce GDPR compliance on cached queries?"
+        ]
+      },
+      {
+        "id": "resp_b",
+        "label": "Response B (Standard Proxy)",
+        "transcript": "Put a proxy server in front of OpenAI. Checks API keys, uses regex to mask credit cards, caches frequent questions, and switches providers if an API fails.",
+        "score": 6,
+        "strength": "Understands proxy, regex, caching, and failover.",
+        "weakness": "Lacks semantic vector caching specifics, tenant cost isolation, and observability.",
+        "followUpQuestions": [
+          "How does semantic vector caching differ from exact match?",
+          "How do you allocate chargebacks to business units?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "ARCH-002",
+    "role": "AI Architect",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Architecture Skills",
+    "question": "Which architecture pattern is most appropriate for enterprise RAG with 100M+ documents requiring real-time ingestion and sub-200ms latency?",
+    "options": [
+      "Brute-force k-NN in RAM",
+      "Hierarchical HNSW indexing with asynchronous Kafka ingestion and metadata pre-filtering",
+      "Nightly full SQLite reindexing",
+      "Client-side browser vector search"
+    ],
+    "correctAnswer": "Hierarchical HNSW indexing with asynchronous Kafka ingestion and metadata pre-filtering",
+    "explanation": "Decoupling ingestion via Kafka and using HNSW with metadata pre-filtering scales to 100M+ vectors with sub-200ms query latency.",
+    "score": 10
+  },
+  {
+    "questionId": "ARCH-003",
+    "role": "AI Architect",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the primary advantage of Triton Inference Server over standard web server wrappers?",
+    "options": [
+      "Dynamic batching, concurrent multi-model GPU execution, and multi-framework backend support",
+      "Built-in React frontend generator",
+      "Integrated SQL database",
+      "Runs without GPU drivers"
+    ],
+    "correctAnswer": "Dynamic batching, concurrent multi-model GPU execution, and multi-framework backend support",
+    "explanation": "Triton maximizes GPU utilization through dynamic request batching and concurrent model execution.",
+    "score": 10
+  },
+  {
+    "questionId": "ARCH-004",
+    "role": "AI Architect",
+    "difficulty": "Advanced",
+    "questionType": "Subjective",
+    "competency": "Problem Solving",
+    "question": "How do you design an AI model evaluation and governance framework to ensure compliance with the EU AI Act for high-risk systems?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Governance & Compliance Specialist)",
+        "transcript": "1) AI Risk Inventory & Classification. 2) CI/CD automated benchmarking on fairness, toxicity, and accuracy. 3) Full model provenance via MLflow/Weights & Biases for auditability. 4) Human-in-the-loop oversight with automated kill-switches. 5) Continuous post-market drift and incident monitoring.",
+        "score": 10,
+        "strength": "Direct alignment with EU AI Act technical provisions.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How do you detect embedding drift in unstructured text?",
+          "What is the protocol for emergency model rollback?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "ARCH-005",
+    "role": "AI Architect",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the primary trade-off between HNSW and IVF-PQ indexing in vector databases?",
+    "options": [
+      "HNSW gives higher recall/lower latency but requires high RAM; IVF-PQ compresses vectors for huge RAM savings with slight recall loss",
+      "HNSW only works for audio",
+      "IVF-PQ requires no training phase",
+      "HNSW cannot support Cosine distance"
+    ],
+    "correctAnswer": "HNSW gives higher recall/lower latency but requires high RAM; IVF-PQ compresses vectors for huge RAM savings with slight recall loss",
+    "explanation": "HNSW maintains an uncompressed graph in RAM for top speed/recall; IVF-PQ quantizes vectors to minimize memory footprint.",
+    "score": 10
+  },
+  {
+    "questionId": "ARCH-006",
+    "role": "AI Architect",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the core objective of MLOps in enterprise environments?",
+    "options": [
+      "Automating and standardizing the entire ML lifecycle from data ingestion to model deployment and monitoring",
+      "Writing ML code in assembly",
+      "Eliminating all data pipelines",
+      "Managing software copyrights"
+    ],
+    "correctAnswer": "Automating and standardizing the entire ML lifecycle from data ingestion to model deployment and monitoring",
+    "explanation": "MLOps establishes continuous integration, delivery, and automated monitoring for production ML.",
+    "score": 10
+  },
+  {
+    "questionId": "ARCH-007",
+    "role": "AI Architect",
+    "difficulty": "Advanced",
+    "questionType": "Scenario",
+    "competency": "Architecture Skills",
+    "question": "What architectural strategies would you implement to achieve this 40% cost reduction?",
+    "scenarioContext": "An enterprise runs 15 LLM applications across cloud and on-premise infrastructure. The CTO requires a 40% reduction in AI operating expenses.",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Cost Optimization Blueprint)",
+        "transcript": "1) Query routing: Route 70% simple queries to self-hosted 8B models on Spot GPU instances. 2) Semantic caching with Redis to bypass LLM generation on repeat queries. 3) Prompt compression and history truncation. 4) Continuous batching with TensorRT-LLM on high-volume endpoints.",
+        "score": 10,
+        "strength": "Addresses routing, caching, prompt optimization, and hardware utilization.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How do you verify small model output quality before fallback?",
+          "What is the ROI breakeven for self-hosting GPUs vs APIs?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "ARCH-008",
+    "role": "AI Architect",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "Which architecture pattern decouples model training from online feature calculation to eliminate training-serving skew?",
+    "options": [
+      "Feature Store (e.g. Feast, SageMaker Feature Store)",
+      "Hardcoded SQL queries in client JS",
+      "Global session cookies",
+      "Recalculating all stats on each HTTP request"
+    ],
+    "correctAnswer": "Feature Store (e.g. Feast, SageMaker Feature Store)",
+    "explanation": "A Feature Store provides a unified definition of features, serving point-in-time historical data for training and sub-millisecond lookups for inference.",
+    "score": 10
+  },
+  {
+    "questionId": "ARCH-009",
+    "role": "AI Architect",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is 'Data Drift' in machine learning monitoring?",
+    "options": [
+      "Statistical shift in the distribution of input features over time",
+      "Database cables being moved",
+      "Hard drive fragmentation",
+      "Renaming database tables"
+    ],
+    "correctAnswer": "Statistical shift in the distribution of input features over time",
+    "explanation": "Data drift occurs when production input feature distributions deviate from training data distributions.",
+    "score": 10
+  },
+  {
+    "questionId": "ARCH-010",
+    "role": "AI Architect",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Architecture Skills",
+    "question": "Which interconnect fabric and communication library provides the lowest latency for multi-node GPU distributed training?",
+    "options": [
+      "NVIDIA NCCL over InfiniBand with GPUDirect RDMA",
+      "HTTP REST over 1Gbps Ethernet",
+      "gRPC over public Wi-Fi",
+      "WebSocket streams"
+    ],
+    "correctAnswer": "NVIDIA NCCL over InfiniBand with GPUDirect RDMA",
+    "explanation": "NCCL with InfiniBand RDMA enables direct memory transfers between GPU memories across nodes.",
+    "score": 10
+  },
+  {
+    "questionId": "ARCH-011",
+    "role": "AI Architect",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the purpose of 'Model Quantization' (e.g. FP16 to INT4)?",
+    "options": [
+      "Reducing model weight precision to lower VRAM requirements and accelerate inference throughput",
+      "Translating code into Python",
+      "Encrypting weights with RSA keys",
+      "Generating synthetic training data"
+    ],
+    "correctAnswer": "Reducing model weight precision to lower VRAM requirements and accelerate inference throughput",
+    "explanation": "Quantization converts floating point weights to lower-bit representations, significantly reducing memory bandwidth bottlenecks.",
+    "score": 10
+  },
+  {
+    "questionId": "ARCH-012",
+    "role": "AI Architect",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What does 'SLA' stand for in enterprise cloud systems?",
+    "options": [
+      "Service Level Agreement",
+      "System Logic Algorithm",
+      "Software License Authorization",
+      "Server Loading Architecture"
+    ],
+    "correctAnswer": "Service Level Agreement",
+    "explanation": "An SLA defines the committed availability, latency, and performance standards between a service provider and client.",
+    "score": 10
+  },
+  {
+    "questionId": "ARCH-013",
+    "role": "AI Architect",
+    "difficulty": "Intermediate",
+    "questionType": "Subjective",
+    "competency": "Problem Solving",
+    "question": "How do you design a disaster recovery and high availability (HA) architecture for a mission-critical AI inference platform?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Active-Active Multi-Region)",
+        "transcript": "Deploy active-active multi-region Kubernetes clusters behind global DNS load balancers (Route 53 / Cloudflare). Replicate vector indices and feature stores cross-region asynchronously. Implement automated health check failovers with circuit breakers and fallback to quantized local backup models in under 5 seconds.",
+        "score": 10,
+        "strength": "Active-active multi-region, automated circuit breakers, and sub-5s failover targets.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How do you handle vector database replication lag?",
+          "What is your RTO and RPO target?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "ARCH-014",
+    "role": "AI Architect",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Architecture Skills",
+    "question": "In an enterprise multi-agent workflow, what is the role of an Orchestrator/Supervisor agent?",
+    "options": [
+      "Decomposes high-level user tasks into sub-tasks, assigns them to specialized worker agents, and aggregates results",
+      "Formats HTML tables for web browsers",
+      "Compiles C++ binaries",
+      "Manages database backups"
+    ],
+    "correctAnswer": "Decomposes high-level user tasks into sub-tasks, assigns them to specialized worker agents, and aggregates results",
+    "explanation": "Supervisor agents maintain global workflow state, route requests dynamically to domain agents, and synthesize final responses.",
+    "score": 10
+  },
+  {
+    "questionId": "ARCH-015",
+    "role": "AI Architect",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What does 'Zero-Shot Learning' mean in modern AI models?",
+    "options": [
+      "The model performs a task without having received specific labeled training examples for that exact task",
+      "The model operates with zero power consumption",
+      "The model took zero seconds to train",
+      "The model has zero parameters"
+    ],
+    "correctAnswer": "The model performs a task without having received specific labeled training examples for that exact task",
+    "explanation": "Zero-shot learning relies on broad pre-trained representations to follow instructions without specialized fine-tuning.",
+    "score": 10
+  },
+  {
+    "questionId": "ARCH-016",
+    "role": "AI Architect",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "Which protocol is widely used for high-performance, low-latency inter-service RPC communication in ML microservice fabrics?",
+    "options": [
+      "gRPC over HTTP/2 with Protocol Buffers",
+      "FTP file transfer",
+      "SOAP XML over HTTP/1.0",
+      "Telnet terminal sessions"
+    ],
+    "correctAnswer": "gRPC over HTTP/2 with Protocol Buffers",
+    "explanation": "gRPC uses binary serialization via Protobuf and HTTP/2 multiplexing, delivering high performance and low serialization overhead.",
+    "score": 10
+  },
+  {
+    "questionId": "ARCH-017",
+    "role": "AI Architect",
+    "difficulty": "Advanced",
+    "questionType": "Subjective",
+    "competency": "Architecture Skills",
+    "question": "Explain how to architect a secure air-gapped private LLM environment for defense or banking clients.",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Air-Gapped Private AI)",
+        "transcript": "1) Infrastructure: On-premise bare-metal GPU nodes completely disconnected from public internet with disabled outbound gateways. 2) Software: Self-hosted open-weights models (Llama 3 / Mistral) served via vLLM. 3) Offline Ingestion: Local Milvus/Qdrant vector databases indexed via local offline embedding models (e.g. BGE). 4) Access Control: Hardware token MFA with Kerberos/mTLS within internal VPC only.",
+        "score": 10,
+        "strength": "Complete zero-trust air-gapped architecture with local embedding and offline indexing.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How do you apply security patches and model updates in an air-gapped environment?",
+          "How do you audit internal queries for data exfiltration?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "ARCH-018",
+    "role": "AI Architect",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is an 'Embedding' in machine learning?",
+    "options": [
+      "A dense numerical vector representation of text, audio, or images where semantic similarity corresponds to geometric proximity",
+      "An image embedded into a PDF document",
+      "A hardware chip soldered to a motherboard",
+      "A database foreign key constraint"
+    ],
+    "correctAnswer": "A dense numerical vector representation of text, audio, or images where semantic similarity corresponds to geometric proximity",
+    "explanation": "Embeddings map discrete inputs into continuous vector spaces where similar concepts cluster together.",
+    "score": 10
+  },
+  {
+    "questionId": "ARCH-019",
+    "role": "AI Architect",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Problem Solving",
+    "question": "When load testing an LLM endpoint, what are the two distinct latency metrics that should always be monitored separately?",
+    "options": [
+      "Time to First Token (TTFT) and Inter-Token Latency (Time Per Output Token - TPOT)",
+      "CPU Fan RPM and Disk Free Space",
+      "Keyboard typing speed and monitor refresh rate",
+      "Ethernet cable length and ping to Google"
+    ],
+    "correctAnswer": "Time to First Token (TTFT) and Inter-Token Latency (Time Per Output Token - TPOT)",
+    "explanation": "TTFT measures prefill processing speed (prompt ingestion), while TPOT measures autoregressive decoding generation speed.",
+    "score": 10
+  },
+  {
+    "questionId": "ARCH-020",
+    "role": "AI Architect",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Architecture Skills",
+    "question": "What is 'Continuous Batching' (or In-Flight Batching) in modern inference engines like vLLM and TensorRT-LLM?",
+    "options": [
+      "Dynamically inserting new incoming requests and retiring completed sequences at every token iteration step rather than waiting for an entire batch to finish",
+      "Running cron jobs every midnight",
+      "Compressing log files hourly",
+      "Re-training models continuously on live traffic"
+    ],
+    "correctAnswer": "Dynamically inserting new incoming requests and retiring completed sequences at every token iteration step rather than waiting for an entire batch to finish",
+    "explanation": "Continuous batching operates at the token level, preventing short requests from being stalled by long requests in the same batch.",
+    "score": 10
+  },
+  {
+    "questionId": "DATA-001",
+    "role": "Data Engineer",
+    "difficulty": "Advanced",
+    "questionType": "Subjective",
+    "competency": "Architecture Skills",
+    "question": "Explain the architecture of a Modern Lakehouse using Apache Iceberg or Delta Lake on top of object storage (S3). How does it handle ACID transactions, schema evolution, and hidden partitioning?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Deep Lakehouse Expertise)",
+        "transcript": "Iceberg structures data in 3 layers: Catalog (pointer to current metadata), Metadata Tree (metadata file -> manifest lists -> manifest files with file statistics), and Data Layer (Parquet). ACID is achieved via Optimistic Concurrency Control with atomic catalog pointer swap. Schema evolution is metadata-only with unique column IDs. Hidden partitioning decouples partition transforms from queries, eliminating manual directory-based WHERE clauses.",
+        "score": 10,
+        "strength": "Clear breakdown of Catalog and Manifest files; exact OCC commit mechanism and column ID schema evolution.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How does Iceberg handle Copy-on-Write vs Merge-on-Read?",
+          "How do you compact small files without locking readers?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "DATA-002",
+    "role": "Data Engineer",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "In Apache Spark, what causes 'Data Skew' during a Shuffle Hash Join, and how do you resolve it?",
+    "options": [
+      "Equal key distribution across workers",
+      "Uneven key distribution causing one executor to process massive data while others idle; resolved by Salting keys or AQE skew join",
+      "Too many columns in Parquet files",
+      "Network cable disconnections"
+    ],
+    "correctAnswer": "Uneven key distribution causing one executor to process massive data while others idle; resolved by Salting keys or AQE skew join",
+    "explanation": "Data skew overloads a single reducer partition. Salting or Spark AQE splits skewed partitions automatically.",
+    "score": 10
+  },
+  {
+    "questionId": "DATA-003",
+    "role": "Data Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "In Kafka, what happens if a consumer group has 5 active consumers but the subscribed topic only has 3 partitions?",
+    "options": [
+      "Each partition is read by all 5 consumers causing duplicates",
+      "Kafka rejects the group",
+      "3 consumers are assigned 1 partition each; 2 remain idle as hot standbys",
+      "Kafka automatically creates 2 extra partitions"
+    ],
+    "correctAnswer": "3 consumers are assigned 1 partition each; 2 remain idle as hot standbys",
+    "explanation": "A partition can only be assigned to one consumer per group; extra consumers remain idle.",
+    "score": 10
+  },
+  {
+    "questionId": "DATA-004",
+    "role": "Data Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "Subjective",
+    "competency": "Problem Solving",
+    "question": "How do you achieve 'Exactly-Once Processing' semantics across an Apache Flink streaming pipeline writing to a database?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Two-Phase Commit & Checkpoints)",
+        "transcript": "Coordinate replayable Kafka offsets, Flink Chandy-Lamport state checkpoints, and a Two-Phase Commit (2PC) sink or idempotent UPSERT primary key sink. Flink opens a pre-commit transaction on the sink and only commits when checkpoint coordinator confirms success across all operators.",
+        "score": 10,
+        "strength": "Chandy-Lamport distributed snapshots, 2PC sink protocol, and idempotent UPSERT mechanics.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "What happens if a worker crashes during pre-commit?",
+          "How does Kafka transactional coordinator resolve zombie producers?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "DATA-005",
+    "role": "Data Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the primary advantage of Columnar file formats (Parquet/ORC) over Row formats (CSV/JSON) for analytics?",
+    "options": [
+      "Column pruning (reading only queried columns) and high compression ratios on homogeneous data",
+      "Can be opened directly in Microsoft Word",
+      "Can only store numbers",
+      "Does not require a filesystem"
+    ],
+    "correctAnswer": "Column pruning (reading only queried columns) and high compression ratios on homogeneous data",
+    "explanation": "Columnar formats minimize I/O by skipping unread columns and compressing identical data types efficiently.",
+    "score": 10
+  },
+  {
+    "questionId": "DATA-006",
+    "role": "Data Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "In dbt (data build tool), what is the difference between an 'ephemeral' and an 'incremental' model?",
+    "options": [
+      "Ephemeral models are compiled into CTEs in downstream queries; Incremental models only insert/update new records into a persistent table",
+      "Ephemeral models write to CSV; Incremental drops the table on every run",
+      "Ephemeral models only run in Python",
+      "No difference"
+    ],
+    "correctAnswer": "Ephemeral models are compiled into CTEs in downstream queries; Incremental models only insert/update new records into a persistent table",
+    "explanation": "Ephemeral models create no database objects (pure CTEs), while Incremental models update physical warehouse tables based on timestamps.",
+    "score": 10
+  },
+  {
+    "questionId": "DATA-007",
+    "role": "Data Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "Which index type in SQL databases is optimized for range queries (e.g. date BETWEEN X and Y)?",
+    "options": [
+      "B+Tree Index",
+      "Hash Index",
+      "Bitmap Index",
+      "Full-Text Inverted Index"
+    ],
+    "correctAnswer": "B+Tree Index",
+    "explanation": "B+Tree leaf nodes are sorted and linked, making range scans O(log N + k).",
+    "score": 10
+  },
+  {
+    "questionId": "DATA-008",
+    "role": "Data Engineer",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "Which open-source platform captures database change events (CDC) by reading PostgreSQL Write-Ahead Logs (WAL)?",
+    "options": [
+      "Debezium",
+      "Apache Lucene",
+      "Redis Sentinel",
+      "Logstash UDP"
+    ],
+    "correctAnswer": "Debezium",
+    "explanation": "Debezium streams row-level changes from database replication logs without polling query overhead.",
+    "score": 10
+  },
+  {
+    "questionId": "DATA-009",
+    "role": "Data Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the difference between a Star Schema and a Snowflake Schema in data warehousing?",
+    "options": [
+      "Star schema dimension tables are denormalized; Snowflake schema dimension tables are normalized into sub-dimensions",
+      "Star schema cannot store foreign keys",
+      "Snowflake schema is only for weather data",
+      "Star schema requires NoSQL databases"
+    ],
+    "correctAnswer": "Star schema dimension tables are denormalized; Snowflake schema dimension tables are normalized into sub-dimensions",
+    "explanation": "Star schema denormalizes dimensions for simpler/faster queries; Snowflake normalizes dimensions to reduce redundancy.",
+    "score": 10
+  },
+  {
+    "questionId": "DATA-010",
+    "role": "Data Engineer",
+    "difficulty": "Advanced",
+    "questionType": "Scenario",
+    "competency": "Problem Solving",
+    "question": "How would you handle late-arriving data in Apache Flink or Spark Structured Streaming?",
+    "scenarioContext": "A financial data pipeline experiences sudden out-of-order event arrivals due to mobile app offline queuing, corrupting 1-minute candlestick aggregations.",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Watermarks & Allowed Lateness)",
+        "transcript": "Implement Event-Time processing with bounded out-of-orderness Watermarks (e.g. Watermark = max(eventTime) - 10 minutes). For data arriving within the watermark window, window aggregations update state automatically. For events exceeding the watermark, route to a Dead-Letter / Side Output queue to trigger an asynchronous backfill compensation job.",
+        "score": 10,
+        "strength": "Uses event-time watermarking, allowed lateness windows, and side-output compensation pipelines.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "What is the state memory overhead of keeping long watermarks?",
+          "How do you reconcile downstream reports when late data updates?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "DATA-011",
+    "role": "Data Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What does ETL stand for?",
+    "options": [
+      "Extract, Transform, Load",
+      "Execute, Test, Launch",
+      "Encode, Transmit, Log",
+      "Encrypt, Tokenize, Lock"
+    ],
+    "correctAnswer": "Extract, Transform, Load",
+    "explanation": "ETL is the foundational data engineering process of gathering data from sources, transforming it, and loading into a destination.",
+    "score": 10
+  },
+  {
+    "questionId": "DATA-012",
+    "role": "Data Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "In PySpark, what is the effect of calling `.cache()` or `.persist()` on a DataFrame?",
+    "options": [
+      "Materializes and saves the DataFrame in executor memory/disk on the first action to avoid recomputing the entire lineage in subsequent actions",
+      "Writes the data to local hard drive as a CSV",
+      "Sends the data to a remote printer",
+      "Deletes the DataFrame from RAM"
+    ],
+    "correctAnswer": "Materializes and saves the DataFrame in executor memory/disk on the first action to avoid recomputing the entire lineage in subsequent actions",
+    "explanation": "Persisting caches intermediate DataFrame partitions across cluster executor memory, optimizing iterative algorithms.",
+    "score": 10
+  },
+  {
+    "questionId": "DATA-013",
+    "role": "Data Engineer",
+    "difficulty": "Advanced",
+    "questionType": "Subjective",
+    "competency": "Technical Knowledge",
+    "question": "Compare the CAP Theorem trade-offs between Cassandra (AP) and CockroachDB/Spanner (CP).",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Deep Distributed Systems Analysis)",
+        "transcript": "Cassandra prioritizes Availability and Partition Tolerance (AP) using peer-to-peer ring topology, tunable consistency (QUORUM / LOCAL_QUORUM), and vector clocks/hinted handoffs. CockroachDB/Spanner prioritize Consistency and Partition Tolerance (CP) using Raft/Paxos consensus algorithms and TrueTime/hybrid logical clocks, guaranteeing serializable ACID transactions across distributed shards at the expense of rejecting writes during network splits.",
+        "score": 10,
+        "strength": "Mastery of consensus protocols, tunable consistency, and partition failure modes.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How does CockroachDB achieve Raft range leasing?",
+          "What is Read-Repair in Cassandra?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "DATA-014",
+    "role": "Data Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is an Airflow DAG?",
+    "options": [
+      "Directed Acyclic Graph; a collection of all the tasks you want to run, organized in a way that reflects their relationships and dependencies",
+      "Data Archive Generator",
+      "Dynamic Array Group",
+      "Database Access Gateway"
+    ],
+    "correctAnswer": "Directed Acyclic Graph; a collection of all the tasks you want to run, organized in a way that reflects their relationships and dependencies",
+    "explanation": "Airflow DAGs model workflow pipelines as directed graphs where execution flows in one direction without circular loops.",
+    "score": 10
+  },
+  {
+    "questionId": "DATA-015",
+    "role": "Data Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the difference between a Dimension table and a Fact table in Kimball dimensional modeling?",
+    "options": [
+      "Fact tables contain numeric measurements and foreign keys; Dimension tables contain contextual descriptive attributes used for filtering and grouping",
+      "Fact tables store user passwords; Dimension tables store emails",
+      "Dimension tables are only for 3D coordinates",
+      "There is no difference"
+    ],
+    "correctAnswer": "Fact tables contain numeric measurements and foreign keys; Dimension tables contain contextual descriptive attributes used for filtering and grouping",
+    "explanation": "Fact tables record quantitative business events (e.g. sales amount), while Dimension tables give context (who, where, when, what).",
+    "score": 10
+  },
+  {
+    "questionId": "DATA-016",
+    "role": "Data Engineer",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Architecture Skills",
+    "question": "In real-time analytical engines like ClickHouse or Apache Pinot, what indexing technique allows instantaneous aggregation across billions of rows?",
+    "options": [
+      "Sparse primary index with sorted column parts and vectorized SIMD execution",
+      "Brute-force nested loops",
+      "Reading unindexed JSON files from disk",
+      "Using JavaScript array.reduce()"
+    ],
+    "correctAnswer": "Sparse primary index with sorted column parts and vectorized SIMD execution",
+    "explanation": "ClickHouse stores data sorted on primary keys in compressed columnar chunks, using sparse primary indexes and SIMD vectorization.",
+    "score": 10
+  },
+  {
+    "questionId": "DATA-017",
+    "role": "Data Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "Subjective",
+    "competency": "Problem Solving",
+    "question": "How do you implement data quality monitoring and anomaly detection across 1,000 automated ETL pipelines?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Automated Data Observability)",
+        "transcript": "1) Schema & Contract testing: Great Expectations / Soda checks integrated in dbt pre-hooks and CI. 2) Metric Telemetry: Automated tracking of table volume deltas, null percentages, and freshness timestamps with Slack alerting. 3) Anomaly Detection: Statistical Z-score and ML anomaly detection (e.g. Monte Carlo) flagging unusual volume drops or distribution shifts. 4) Circuit Breaker: Halt downstream pipeline publishing if critical data quality assertions fail.",
+        "score": 10,
+        "strength": "Covers data contracts, continuous statistical monitoring, Slack webhooks, and circuit breaking.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How do you prevent false-positive alert fatigue in data quality monitors?",
+          "What is a Data Contract?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "DATA-018",
+    "role": "Data Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "Which SQL window function assigns a unique sequential integer to rows within a partition without gaps?",
+    "options": [
+      "ROW_NUMBER()",
+      "RANK()",
+      "DENSE_RANK()",
+      "COUNT()"
+    ],
+    "correctAnswer": "ROW_NUMBER()",
+    "explanation": "ROW_NUMBER() outputs a continuous sequential numbering (1, 2, 3...) regardless of ties.",
+    "score": 10
+  },
+  {
+    "questionId": "DATA-019",
+    "role": "Data Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the purpose of 'Compaction' in log-structured storage engines (LSM Trees / RocksDB)?",
+    "options": [
+      "Merging sorted string tables (SSTables) and purging deleted or superseded keys to reclaim disk space and speed up reads",
+      "Converting Python files to C++",
+      "Compressing images with zip",
+      "Restarting database servers"
+    ],
+    "correctAnswer": "Merging sorted string tables (SSTables) and purging deleted or superseded keys to reclaim disk space and speed up reads",
+    "explanation": "LSM tree compaction merges overlapping SSTables from upper levels into lower levels, removing obsolete records.",
+    "score": 10
+  },
+  {
+    "questionId": "DATA-020",
+    "role": "Data Engineer",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "In Snowflake architecture, what separates compute resources from persistent storage?",
+    "options": [
+      "Multi-cluster shared data architecture with virtual compute warehouses querying shared cloud object storage",
+      "Using separate physical hard drives in a single tower",
+      "Splitting code into two git repos",
+      "Disabling SQL transactions"
+    ],
+    "correctAnswer": "Multi-cluster shared data architecture with virtual compute warehouses querying shared cloud object storage",
+    "explanation": "Snowflake decouples independent Virtual Warehouses (compute) from centralized cloud storage (S3/GCS/Azure Blob).",
+    "score": 10
+  },
+  {
+    "questionId": "FS-001",
+    "role": "Full Stack Engineer",
+    "difficulty": "Advanced",
+    "questionType": "Subjective",
+    "competency": "Architecture Skills",
+    "question": "Explain how React 18 Concurrent Features (Transitions, Suspense, and Server Components) work under the hood. How does the Fiber reconciler schedule work without blocking the main thread?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Mastery of React Internals)",
+        "transcript": "React 18 Fiber structures tree nodes as linked lists with child, sibling, and return pointers. The scheduler uses cooperative multitasking with Lane priorities (SyncLane, InputContinuousLane, TransitionLane). With useTransition(), updates are marked low-priority, yielding the event loop to keystrokes. Server Components execute on the backend, streaming serialized JSX wire formats and eliminating server dependencies from client JS bundles.",
+        "score": 10,
+        "strength": "Fiber linked list, Lane priority model, cooperative scheduling, and RSC wire format.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How does selective hydration work with Suspense?",
+          "How do React Error Boundaries catch server streaming errors?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "FS-002",
+    "role": "Full Stack Engineer",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "In Node.js event loop architecture, in which phase are process.nextTick() and resolved microtask Promise callbacks executed?",
+    "options": [
+      "Immediately after the current synchronous operation finishes, before proceeding to the next event loop phase",
+      "Only during the Close Callbacks phase",
+      "Inside the Poll phase after TCP socket I/O",
+      "On a background worker thread"
+    ],
+    "correctAnswer": "Immediately after the current synchronous operation finishes, before proceeding to the next event loop phase",
+    "explanation": "Microtask queues are drained immediately when the current operation completes and between each event loop phase.",
+    "score": 10
+  },
+  {
+    "questionId": "FS-003",
+    "role": "Full Stack Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "When securing a Single Page Application against XSS and CSRF, where should session tokens be stored?",
+    "options": [
+      "In an HttpOnly, Secure, SameSite cookie with anti-CSRF token verification",
+      "In browser localStorage",
+      "In a global window.__TOKEN variable",
+      "Inside URL query parameters"
+    ],
+    "correctAnswer": "In an HttpOnly, Secure, SameSite cookie with anti-CSRF token verification",
+    "explanation": "HttpOnly cookies prevent XSS theft, Secure enforces HTTPS, and SameSite with CSRF tokens stops CSRF exploits.",
+    "score": 10
+  },
+  {
+    "questionId": "FS-004",
+    "role": "Full Stack Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "Subjective",
+    "competency": "Problem Solving",
+    "question": "How do you optimize Core Web Vitals (specifically Largest Contentful Paint - LCP, and Cumulative Layout Shift - CLS) on a high-traffic Next.js application?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Web Performance Specialist)",
+        "transcript": "For LCP: 1) Preload hero image with fetchpriority='high'. 2) Use next/image with modern WebP/AVIF. 3) Edge caching on CDN for TTFB <150ms. 4) Inline critical CSS. For CLS: 1) Explicit width/height or aspect-ratio on all media. 2) Reserve space for dynamic ad banners. 3) Use next/font with font-display: optional to eliminate font swap shifts.",
+        "score": 10,
+        "strength": "Covers fetchpriority, CDN caching, aspect-ratio, and font-display optimization.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "What is Interaction to Next Paint (INP)?",
+          "How do you monitor real user Web Vitals in production?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "FS-005",
+    "role": "Full Stack Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the key difference between CSS Grid and CSS Flexbox?",
+    "options": [
+      "CSS Grid is a 2D layout system (rows and columns simultaneously); Flexbox is a 1D layout system (row OR column)",
+      "Flexbox is only for mobile apps",
+      "Grid cannot be styled with CSS",
+      "Flexbox does not support justify-content"
+    ],
+    "correctAnswer": "CSS Grid is a 2D layout system (rows and columns simultaneously); Flexbox is a 1D layout system (row OR column)",
+    "explanation": "Grid handles simultaneous two-dimensional row/column layouts; Flexbox aligns elements along a single main axis.",
+    "score": 10
+  },
+  {
+    "questionId": "FS-006",
+    "role": "Full Stack Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "In TypeScript, what is the difference between 'unknown' and 'any'?",
+    "options": [
+      "'unknown' is type-safe because operations require type narrowing first; 'any' completely disables type checking",
+      "'unknown' is only for numbers",
+      "'any' is type-safe",
+      "They are identical aliases"
+    ],
+    "correctAnswer": "'unknown' is type-safe because operations require type narrowing first; 'any' completely disables type checking",
+    "explanation": "unknown forces compile-time type validation before usage, whereas any bypasses the type checker.",
+    "score": 10
+  },
+  {
+    "questionId": "FS-007",
+    "role": "Full Stack Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What does the HTTP status code 429 indicate?",
+    "options": [
+      "Too Many Requests (Rate limited by server)",
+      "Permanent redirect",
+      "Internal database error",
+      "Unauthorized credentials"
+    ],
+    "correctAnswer": "Too Many Requests (Rate limited by server)",
+    "explanation": "429 signals that the client has exceeded allowed request rate limits.",
+    "score": 10
+  },
+  {
+    "questionId": "FS-008",
+    "role": "Full Stack Engineer",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "In PostgreSQL, what is the difference between READ COMMITTED and REPEATABLE READ transaction isolation levels?",
+    "options": [
+      "READ COMMITTED sees committed changes made by concurrent transactions during the transaction; REPEATABLE READ freezes a snapshot at transaction start",
+      "REPEATABLE READ locks the whole database",
+      "READ COMMITTED allows dirty reads",
+      "No difference in Postgres"
+    ],
+    "correctAnswer": "READ COMMITTED sees committed changes made by concurrent transactions during the transaction; REPEATABLE READ freezes a snapshot at transaction start",
+    "explanation": "READ COMMITTED evaluates statements against freshly committed data, while REPEATABLE READ maintains a point-in-time snapshot.",
+    "score": 10
+  },
+  {
+    "questionId": "FS-009",
+    "role": "Full Stack Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "In modern JavaScript, what is the benefit of using `structuredClone()` over `JSON.parse(JSON.stringify())` for deep copying objects?",
+    "options": [
+      "Properly clones circular references, Maps, Sets, Dates, and ArrayBuffers without loss",
+      "It runs synchronously on GPU",
+      "It works without JavaScript",
+      "It reduces object size in RAM"
+    ],
+    "correctAnswer": "Properly clones circular references, Maps, Sets, Dates, and ArrayBuffers without loss",
+    "explanation": "structuredClone natively supports complex JS types (Date, RegExp, Map, Set, TypedArray, circular refs) that JSON stringify destroys.",
+    "score": 10
+  },
+  {
+    "questionId": "FS-010",
+    "role": "Full Stack Engineer",
+    "difficulty": "Advanced",
+    "questionType": "Scenario",
+    "competency": "Architecture Skills",
+    "question": "How would you architect the real-time synchronization engine to achieve sub-50ms latency and scale horizontally?",
+    "scenarioContext": "A collaborative real-time whiteboarding web app with 5,000 concurrent users suffers from lagging stroke synchronization and high WebSocket server memory consumption.",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (CRDTs & Distributed Pub/Sub)",
+        "transcript": "1) State Synchronization: Use CRDTs (Conflict-free Replicated Data Types like Yjs or Automerge) over WebSockets/WebRTC with binary encoded delta updates (Protobuf/MessagePack) instead of bulky JSON. 2) Backend Distribution: Horizontally scaled WebSocket gateways connected via Redis Pub/Sub or NATS clusters with room-based channel sharding. 3) Client Optimization: Client-side local optimistic rendering with interpolation smoothing and RAF-throttled stroke batching.",
+        "score": 10,
+        "strength": "Uses CRDTs, binary delta encoding, Redis/NATS sharding, and client optimistic rendering.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How does CRDT state compaction work for long-running boards?",
+          "How do you handle client reconnects with missed deltas?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "FS-011",
+    "role": "Full Stack Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the purpose of the `useEffect` cleanup function in React?",
+    "options": [
+      "Cancels active subscriptions, timers, or aborts fetch requests when the component unmounts or before re-running the effect",
+      "Cleans the computer hard drive",
+      "Deletes unrendered DOM nodes",
+      "Restarts the browser tab"
+    ],
+    "correctAnswer": "Cancels active subscriptions, timers, or aborts fetch requests when the component unmounts or before re-running the effect",
+    "explanation": "The returned cleanup function prevents memory leaks and stale event listeners across renders.",
+    "score": 10
+  },
+  {
+    "questionId": "FS-012",
+    "role": "Full Stack Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the primary difference between WebSockets and Server-Sent Events (SSE)?",
+    "options": [
+      "WebSockets provide bidirectional full-duplex communication over a single TCP connection; SSE is unidirectional from server to client over standard HTTP",
+      "SSE is bidirectional, WebSockets are unidirectional",
+      "WebSockets only work on Linux",
+      "SSE requires custom browser plugins"
+    ],
+    "correctAnswer": "WebSockets provide bidirectional full-duplex communication over a single TCP connection; SSE is unidirectional from server to client over standard HTTP",
+    "explanation": "WebSockets enable true bidirectional messaging; SSE provides lightweight unidirectional streaming over standard HTTP with built-in reconnection.",
+    "score": 10
+  },
+  {
+    "questionId": "FS-013",
+    "role": "Full Stack Engineer",
+    "difficulty": "Advanced",
+    "questionType": "Subjective",
+    "competency": "Technical Knowledge",
+    "question": "Explain how Module Federation in Webpack/Vite enables Microfrontend architecture.",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Module Federation Architecture)",
+        "transcript": "Module Federation allows independent JavaScript builds to dynamically import remote modules at runtime without bundling them together at compile time. Host applications load Remote containers via a shared manifest. It manages shared singleton dependencies (like React, React-DOM, state stores) via version negotiation, preventing duplicate libraries and enabling zero-downtime independent team deployments.",
+        "score": 10,
+        "strength": "Covers host/remote containers, runtime dynamic imports, and shared singleton dependency resolution.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How do you handle CSS scoping and styling conflicts between microfrontends?",
+          "What happens if a remote module fails to load over the network?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "FS-014",
+    "role": "Full Stack Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "In CSS, what does the box-sizing property `border-box` do?",
+    "options": [
+      "Includes padding and border within the element's total specified width and height",
+      "Adds a 10px red border to all elements",
+      "Disables CSS margins",
+      "Prevents element resizing on mobile"
+    ],
+    "correctAnswer": "Includes padding and border within the element's total specified width and height",
+    "explanation": "border-box ensures width = content + padding + border, preventing layout calculation surprises.",
+    "score": 10
+  },
+  {
+    "questionId": "FS-015",
+    "role": "Full Stack Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Problem Solving",
+    "question": "When implementing debounce vs throttle on a search input with auto-complete suggestions, which technique should you use?",
+    "options": [
+      "Debounce (delays execution until user pauses typing for N milliseconds)",
+      "Throttle (executes strictly once every N milliseconds regardless of typing)",
+      "Neither (execute on every keystroke with zero delay)",
+      "Block all keystrokes"
+    ],
+    "correctAnswer": "Debounce (delays execution until user pauses typing for N milliseconds)",
+    "explanation": "Debounce waits for a pause in typing, preventing unnecessary intermediate API requests while the user is actively typing.",
+    "score": 10
+  },
+  {
+    "questionId": "FS-016",
+    "role": "Full Stack Engineer",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Architecture Skills",
+    "question": "In GraphQL, what is the 'N+1 Problem' and how is it resolved?",
+    "options": [
+      "Executing 1 query for parents and N subsequent database queries for each child relation; resolved using DataLoader batching and memoization caching",
+      "Having more than N+1 schema fields",
+      "Overloading the CPU with N+1 threads",
+      "GraphQL server crash after N+1 queries"
+    ],
+    "correctAnswer": "Executing 1 query for parents and N subsequent database queries for each child relation; resolved using DataLoader batching and memoization caching",
+    "explanation": "DataLoader batches individual entity requests within an event loop tick into a single SQL WHERE id IN (...) query.",
+    "score": 10
+  },
+  {
+    "questionId": "FS-017",
+    "role": "Full Stack Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "Subjective",
+    "competency": "Coding Skills",
+    "question": "How do you implement accessible keyboard navigation (WAI-ARIA) for a custom multi-select dropdown component?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Accessibility Engineering)",
+        "transcript": "1) Roles & Attributes: role='combobox' / 'listbox' / 'option', aria-expanded, aria-haspopup='listbox', aria-selected on chosen options, and aria-activedescendant pointing to active option ID. 2) Keyboard Navigation: ArrowUp/ArrowDown to move focus, Space/Enter to toggle selection, Escape to close and return focus to trigger, Home/End to jump to ends. 3) Focus Management: Maintain focus on trigger or listbox without breaking tab order.",
+        "score": 10,
+        "strength": "Covers ARIA roles, states, aria-activedescendant, and comprehensive keyboard handlers.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How does a screen reader announce live search filter results?",
+          "What is the difference between visual focus and DOM focus?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "FS-018",
+    "role": "Full Stack Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What does the SQL clause `HAVING` do compared to `WHERE`?",
+    "options": [
+      "HAVING filters groups after GROUP BY aggregations; WHERE filters individual rows before grouping",
+      "HAVING is only for strings",
+      "WHERE can only be used on primary keys",
+      "They are identical"
+    ],
+    "correctAnswer": "HAVING filters groups after GROUP BY aggregations; WHERE filters individual rows before grouping",
+    "explanation": "WHERE filters rows before aggregation; HAVING filters aggregated metric results (e.g. HAVING count(*) > 5).",
+    "score": 10
+  },
+  {
+    "questionId": "FS-019",
+    "role": "Full Stack Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the purpose of Content Security Policy (CSP) HTTP headers?",
+    "options": [
+      "Restricts the sources from which scripts, styles, images, and fonts can be loaded and executed to prevent XSS and clickjacking",
+      "Speeds up internet connection",
+      "Enforces dark mode in browsers",
+      "Compresses HTML files with Gzip"
+    ],
+    "correctAnswer": "Restricts the sources from which scripts, styles, images, and fonts can be loaded and executed to prevent XSS and clickjacking",
+    "explanation": "CSP headers instruct browsers on trusted domains for executable scripts and assets, neutralizing injection attacks.",
+    "score": 10
+  },
+  {
+    "questionId": "FS-020",
+    "role": "Full Stack Engineer",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Architecture Skills",
+    "question": "In distributed web architectures, how does Idempotency Key handling work in payment or ordering APIs?",
+    "options": [
+      "Client sends a unique UUID in header; server stores request result in atomic Redis cache, returning identical result on retries without re-charging",
+      "Forces user to type password twice",
+      "Locks the database for 10 minutes",
+      "Generates random credit card numbers"
+    ],
+    "correctAnswer": "Client sends a unique UUID in header; server stores request result in atomic Redis cache, returning identical result on retries without re-charging",
+    "explanation": "Idempotency keys prevent duplicate mutations during network timeouts by caching the original operation result.",
+    "score": 10
+  },
+  {
+    "questionId": "OPS-001",
+    "role": "DevOps Engineer",
+    "difficulty": "Advanced",
+    "questionType": "Subjective",
+    "competency": "Architecture Skills",
+    "question": "How do you architect a multi-cluster Kubernetes GitOps continuous delivery pipeline using ArgoCD, Helm, and progressive Canary rollouts (Argo Rollouts)?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Production GitOps Architecture)",
+        "transcript": "1) Git Repo: Declarative manifests separating apps/ and infra/ with environment overlays. 2) Central ArgoCD managing workload clusters via IAM OIDC. 3) Secret management with Bitnami SealedSecrets / External Secrets Operator. 4) Progressive Delivery via Argo Rollouts: step weights (10% -> 10m pause -> automated Prometheus AnalysisTemplate checking 5xx error rate <0.5% & p99 <250ms -> 50% -> 100%). Automated instant rollback on SLA breach.",
+        "score": 10,
+        "strength": "Full GitOps blueprint, automated metric analysis templates, and secret encryption.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How do you handle database migrations during active canaries?",
+          "How do you update shared Helm charts across clusters?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "OPS-002",
+    "role": "DevOps Engineer",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "In Linux container networking, how does eBPF-based Cilium replace kube-proxy (iptables)?",
+    "options": [
+      "Attaches eBPF programs directly to socket and network interface hooks (tc/XDP) for O(1) routing and line-rate encryption bypassing iptables chains",
+      "Converts TCP packets to UDP broadcasts",
+      "Turns off Kubernetes network policies",
+      "Runs physical fiber cables to pods"
+    ],
+    "correctAnswer": "Attaches eBPF programs directly to socket and network interface hooks (tc/XDP) for O(1) routing and line-rate encryption bypassing iptables chains",
+    "explanation": "eBPF replaces linear iptables searches with hash table Lookups in the Linux kernel for high packet throughput.",
+    "score": 10
+  },
+  {
+    "questionId": "OPS-003",
+    "role": "DevOps Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "In Kubernetes, what is the crucial difference between a livenessProbe and a readinessProbe?",
+    "options": [
+      "livenessProbe checks if the pod container should be killed and restarted; readinessProbe checks if the pod should receive incoming traffic via Service endpoints",
+      "readinessProbe reboots the node; livenessProbe sends emails",
+      "livenessProbe is only for databases",
+      "They are identical"
+    ],
+    "correctAnswer": "livenessProbe checks if the pod container should be killed and restarted; readinessProbe checks if the pod should receive incoming traffic via Service endpoints",
+    "explanation": "Failed liveness probes restart containers; failed readiness probes remove pods from load balancer endpoints without restarts.",
+    "score": 10
+  },
+  {
+    "questionId": "OPS-004",
+    "role": "DevOps Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "Subjective",
+    "competency": "Problem Solving",
+    "question": "How do you debug an application running in Kubernetes that is intermittently throwing OOMKilled (Exit Code 137) errors?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Systematic SRE Diagnostics)",
+        "transcript": "1) Verify via kubectl describe pod for exit code 137 and memory limits. 2) Telemetry: Inspect Grafana container_memory_working_set_bytes vs memory_rss to see if leak or spike. 3) Profiling: Continuous heap dumps / pprof. 4) Kernel Logs: Check dmesg for cgroup eviction events. 5) Remediation: Tune memory limits, fix memory buffers, or configure Horizontal Pod Autoscaler.",
+        "score": 10,
+        "strength": "Distinguishes working_set_bytes from RSS, mentions continuous profiling, heap dumps, and cgroups.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "Why is working_set_bytes used for OOM eviction instead of RSS?",
+          "How do JVM heap flags interact with container cgroups?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "OPS-005",
+    "role": "DevOps Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "In Terraform, what does `terraform plan` do?",
+    "options": [
+      "Creates an execution plan showing what cloud infrastructure additions, modifications, or deletions will occur without modifying real resources",
+      "Deletes all cloud resources",
+      "Commits files to GitHub",
+      "Executes scripts on production servers"
+    ],
+    "correctAnswer": "Creates an execution plan showing what cloud infrastructure additions, modifications, or deletions will occur without modifying real resources",
+    "explanation": "terraform plan compares state with code and shows the exact diff that terraform apply would perform.",
+    "score": 10
+  },
+  {
+    "questionId": "OPS-006",
+    "role": "DevOps Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "In Docker multi-stage builds, what is the primary benefit of separating the builder stage from the final production runtime image?",
+    "options": [
+      "Significantly reduces final container image size and shrinks attack surface by omitting compilers, SDKs, and build files",
+      "Allows containers to run on Windows and Linux simultaneously",
+      "Eliminates Docker daemon",
+      "Speeds up hardware clocks"
+    ],
+    "correctAnswer": "Significantly reduces final container image size and shrinks attack surface by omitting compilers, SDKs, and build files",
+    "explanation": "Multi-stage builds produce tiny, secure production containers containing only compiled artifacts and minimal runtimes.",
+    "score": 10
+  },
+  {
+    "questionId": "OPS-007",
+    "role": "DevOps Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "Which observability pillar deals with structured timestamped event records of occurrences in an application?",
+    "options": [
+      "Logs",
+      "Metrics",
+      "Distributed Traces",
+      "Continuous Profiles"
+    ],
+    "correctAnswer": "Logs",
+    "explanation": "Logs capture discrete events with timestamps and contextual attributes.",
+    "score": 10
+  },
+  {
+    "questionId": "OPS-008",
+    "role": "DevOps Engineer",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "In Terraform state management, what mechanism prevents two engineers or CI pipelines from applying concurrent state modifications?",
+    "options": [
+      "State Locking (e.g. AWS DynamoDB table or Terraform Cloud state lock)",
+      "Renaming main.tf",
+      "VPN disconnect",
+      "Git hooks deleting history"
+    ],
+    "correctAnswer": "State Locking (e.g. AWS DynamoDB table or Terraform Cloud state lock)",
+    "explanation": "State locking acquires a mutex on remote state backends during operations to prevent race conditions and state corruption.",
+    "score": 10
+  },
+  {
+    "questionId": "OPS-009",
+    "role": "DevOps Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the purpose of a Service Mesh (e.g. Istio, Linkerd) in a microservices architecture?",
+    "options": [
+      "Provides transparent mTLS encryption, traffic routing/splitting, circuit breaking, and observability between services via sidecar proxies",
+      "Replaces physical network routers",
+      "Generates React frontends",
+      "Manages database backups"
+    ],
+    "correctAnswer": "Provides transparent mTLS encryption, traffic routing/splitting, circuit breaking, and observability between services via sidecar proxies",
+    "explanation": "Service meshes manage service-to-service communication, security (mTLS), and telemetry without changing application code.",
+    "score": 10
+  },
+  {
+    "questionId": "OPS-010",
+    "role": "DevOps Engineer",
+    "difficulty": "Advanced",
+    "questionType": "Scenario",
+    "competency": "Problem Solving",
+    "question": "What architectural patterns should be implemented to prevent this thundering herd / cascading collapse?",
+    "scenarioContext": "A production Kubernetes cluster experiences a cascading crash after a redis cache outage causes all 200 backend pods to flood the primary PostgreSQL database with reconnects.",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Resilience & Chaos Engineering)",
+        "transcript": "1) Connection Pooling: Deploy PgBouncer in front of PostgreSQL to bound maximum database connections. 2) Exponential Backoff with Full Jitter: Update client reconnect logic so retries distribute across time rather than synchronizing. 3) Circuit Breaking: Implement Envoy / resilience4j circuit breakers to fail-fast when database latency spikes. 4) Rate Limiting & Shedding: Drop non-critical read queries under overload.",
+        "score": 10,
+        "strength": "Covers connection pooling (PgBouncer), jittered exponential backoffs, circuit breakers, and load shedding.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How does Full Jitter mathematically differ from Equal Jitter?",
+          "How do you test this resilience in CI with Chaos Mesh?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "OPS-011",
+    "role": "DevOps Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is the difference between Continuous Integration (CI) and Continuous Deployment (CD)?",
+    "options": [
+      "CI automates building and testing code on commit; CD automates deploying validated code directly to production environments",
+      "CI is for Linux, CD is for Windows",
+      "CI takes 10 hours, CD takes 1 second",
+      "There is no difference"
+    ],
+    "correctAnswer": "CI automates building and testing code on commit; CD automates deploying validated code directly to production environments",
+    "explanation": "CI ensures code merges cleanly with passing automated tests; CD automates seamless release into production.",
+    "score": 10
+  },
+  {
+    "questionId": "OPS-012",
+    "role": "DevOps Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "In Prometheus metrics, what is the difference between a Counter and a Gauge?",
+    "options": [
+      "Counter only increases (or resets to zero on restart); Gauge can go up or down arbitrarily (e.g. memory usage, active connections)",
+      "Counter can go down, Gauge only goes up",
+      "Counters are only for CPU",
+      "They are identical"
+    ],
+    "correctAnswer": "Counter only increases (or resets to zero on restart); Gauge can go up or down arbitrarily (e.g. memory usage, active connections)",
+    "explanation": "Counters track cumulative events (e.g. total HTTP requests); Gauges measure instantaneous values (e.g. current queue depth).",
+    "score": 10
+  },
+  {
+    "questionId": "OPS-013",
+    "role": "DevOps Engineer",
+    "difficulty": "Advanced",
+    "questionType": "Subjective",
+    "competency": "Technical Knowledge",
+    "question": "Explain Zero Trust Architecture (ZTA) in cloud infrastructure and how to implement it using mTLS and SPIFFE/SPIRE.",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (Zero Trust Engineering)",
+        "transcript": "Zero Trust assumes network perimeter breach and enforces 'never trust, always verify'. SPIFFE provides a standardized cryptographic workload identity (SPIFFE ID URI), and SPIRE issues short-lived X.509 SVID certificates. Services establish mutual TLS (mTLS) with cryptographically verified workload identities, enforcing fine-grained RBAC authorization policies independent of network IP addresses.",
+        "score": 10,
+        "strength": "Covers SPIFFE/SPIRE architecture, short-lived SVID certs, mTLS handshake verification, and identity-based authorization.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How does SPIRE attest workloads running inside Kubernetes pods?",
+          "How are SVID certificates rotated automatically without downtime?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "OPS-014",
+    "role": "DevOps Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "In Linux, what command is used to inspect disk space usage across mounted filesystems?",
+    "options": [
+      "df -h",
+      "free -m",
+      "top",
+      "chmod 777"
+    ],
+    "correctAnswer": "df -h",
+    "explanation": "df -h shows disk space usage in human-readable gigabytes/megabytes.",
+    "score": 10
+  },
+  {
+    "questionId": "OPS-015",
+    "role": "DevOps Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Problem Solving",
+    "question": "What is the purpose of Kubernetes Horizontal Pod Autoscaler (HPA)?",
+    "options": [
+      "Automatically scales the number of pod replicas up or down based on observed CPU/memory utilization or custom metrics",
+      "Increases node RAM size physically",
+      "Deletes pods after midnight",
+      "Restarts dead servers"
+    ],
+    "correctAnswer": "Automatically scales the number of pod replicas up or down based on observed CPU/memory utilization or custom metrics",
+    "explanation": "HPA queries metrics-server or Prometheus to adjust pod replica count according to defined target utilization thresholds.",
+    "score": 10
+  },
+  {
+    "questionId": "OPS-016",
+    "role": "DevOps Engineer",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Architecture Skills",
+    "question": "In AWS IAM, what is the security principle of 'Least Privilege'?",
+    "options": [
+      "Granting only the absolute minimum permissions necessary to perform a specific task and no more",
+      "Giving root admin access to all developers",
+      "Deleting all IAM roles",
+      "Allowing public read access on all S3 buckets"
+    ],
+    "correctAnswer": "Granting only the absolute minimum permissions necessary to perform a specific task and no more",
+    "explanation": "Least privilege minimizes security blast radius by scoping IAM policies strictly to required actions and resource ARNs.",
+    "score": 10
+  },
+  {
+    "questionId": "OPS-017",
+    "role": "DevOps Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "Subjective",
+    "competency": "Problem Solving",
+    "question": "How do you automate Secrets Management in a Kubernetes cluster using HashiCorp Vault or AWS Secrets Manager?",
+    "score": 10,
+    "predefinedResponses": [
+      {
+        "id": "resp_a",
+        "label": "Response A (External Secrets Operator)",
+        "transcript": "Deploy External Secrets Operator (ESO) in the cluster. Create SecretStore resources referencing AWS Secrets Manager or HashiCorp Vault with IAM Roles for Service Accounts (IRSA). Developers declare ExternalSecret CRDs in Git. ESO syncs secrets into native Kubernetes Secret objects in memory, allowing automatic secret rotation without storing plaintext credentials in Git repositories.",
+        "score": 10,
+        "strength": "Uses External Secrets Operator, IRSA IAM authentication, and automated rotation.",
+        "weakness": "None.",
+        "followUpQuestions": [
+          "How does Vault Agent sidecar injector compare to External Secrets Operator?",
+          "How do you trigger pod restarts when a synced secret rotates?"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "OPS-018",
+    "role": "DevOps Engineer",
+    "difficulty": "Beginner",
+    "questionType": "MCQ",
+    "competency": "Coding Skills",
+    "question": "In a Dockerfile, what is the difference between `CMD` and `ENTRYPOINT`?",
+    "options": [
+      "`ENTRYPOINT` defines the executable that always runs; `CMD` provides default arguments that can be easily overridden from docker run CLI",
+      "`CMD` runs as root, `ENTRYPOINT` runs as guest",
+      "`ENTRYPOINT` is only for Windows",
+      "They are identical aliases"
+    ],
+    "correctAnswer": "`ENTRYPOINT` defines the executable that always runs; `CMD` provides default arguments that can be easily overridden from docker run CLI",
+    "explanation": "ENTRYPOINT configures the container as an executable; CMD sets default parameters that can be superseded.",
+    "score": 10
+  },
+  {
+    "questionId": "OPS-019",
+    "role": "DevOps Engineer",
+    "difficulty": "Intermediate",
+    "questionType": "MCQ",
+    "competency": "Technical Knowledge",
+    "question": "What is Chaos Engineering and why is it practiced?",
+    "options": [
+      "Intentionally injecting faults (network latency, pod kills, disk fills) into production or staging systems to uncover hidden resilience vulnerabilities before real incidents occur",
+      "Writing unformatted code randomly",
+      "Deploying without unit tests",
+      "Deleting random database rows"
+    ],
+    "correctAnswer": "Intentionally injecting faults (network latency, pod kills, disk fills) into production or staging systems to uncover hidden resilience vulnerabilities before real incidents occur",
+    "explanation": "Chaos engineering builds confidence in system resilience by proactively validating automated recovery mechanisms under controlled failures.",
+    "score": 10
+  },
+  {
+    "questionId": "OPS-020",
+    "role": "DevOps Engineer",
+    "difficulty": "Advanced",
+    "questionType": "MCQ",
+    "competency": "Architecture Skills",
+    "question": "In site reliability engineering (SRE), what is an 'Error Budget'?",
+    "options": [
+      "1 minus the SLO (Service Level Objective); the allowable amount of downtime or error rate that product teams can spend on risky new deployments before freezing releases to focus on reliability",
+      "The financial budget paid to cloud providers",
+      "The total number of bugs in Jira",
+      "The cost of developer laptops"
+    ],
+    "correctAnswer": "1 minus the SLO (Service Level Objective); the allowable amount of downtime or error rate that product teams can spend on risky new deployments before freezing releases to focus on reliability",
+    "explanation": "Error budgets balance feature velocity with reliability; exhausting the budget pauses feature rollouts in favor of stability improvements.",
+    "score": 10
+  }
+]

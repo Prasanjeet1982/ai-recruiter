@@ -1,0 +1,47 @@
+[
+  {
+    "id": "HM-001",
+    "name": "Dr. Arthur Vance",
+    "title": "Head of Generative AI Products",
+    "department": "GenAI Business Unit",
+    "email": "arthur.vance@enterprise.com",
+    "openReqs": 6,
+    "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "HM-002",
+    "name": "Claire Underwood",
+    "title": "VP of Enterprise Architecture",
+    "department": "Chief Technology Office",
+    "email": "claire.underwood@enterprise.com",
+    "openReqs": 4,
+    "avatarUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "HM-003",
+    "name": "Sanjay Patel",
+    "title": "Director of Global Data Platforms",
+    "department": "Data & Insights",
+    "email": "sanjay.patel@enterprise.com",
+    "openReqs": 5,
+    "avatarUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "HM-004",
+    "name": "Rebecca Thorne",
+    "title": "Senior Director of Web Applications",
+    "department": "Digital Experience",
+    "email": "rebecca.thorne@enterprise.com",
+    "openReqs": 8,
+    "avatarUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "HM-005",
+    "name": "Travis Sterling",
+    "title": "VP of Cloud & Infrastructure",
+    "department": "Core SRE & Security",
+    "email": "travis.sterling@enterprise.com",
+    "openReqs": 5,
+    "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80"
+  }
+]

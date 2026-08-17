@@ -1,0 +1,102 @@
+[
+  {
+    "id": "INT-001",
+    "name": "Sarah Jenkins",
+    "title": "Lead AI Scientist",
+    "department": "Applied AI Research",
+    "email": "sarah.jenkins@enterprise.com",
+    "rating": 4.9,
+    "activeInterviewsCount": 4,
+    "avatarUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "INT-002",
+    "name": "David Chen",
+    "title": "Staff ML Engineer",
+    "department": "GenAI Foundations",
+    "email": "david.chen@enterprise.com",
+    "rating": 4.8,
+    "activeInterviewsCount": 3,
+    "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "INT-003",
+    "name": "Sophia Zhang",
+    "title": "VP of AI Engineering",
+    "department": "Executive Engineering",
+    "email": "sophia.zhang@enterprise.com",
+    "rating": 5,
+    "activeInterviewsCount": 2,
+    "avatarUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "INT-004",
+    "name": "Alex Rivera",
+    "title": "Principal Architect",
+    "department": "Enterprise Architecture",
+    "email": "alex.rivera@enterprise.com",
+    "rating": 4.7,
+    "activeInterviewsCount": 5,
+    "avatarUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "INT-005",
+    "name": "Kavita Nair",
+    "title": "Staff Data Engineer",
+    "department": "Data Platform",
+    "email": "kavita.nair@enterprise.com",
+    "rating": 4.9,
+    "activeInterviewsCount": 3,
+    "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "INT-006",
+    "name": "Marcus Sterling",
+    "title": "Lead Data Architect",
+    "department": "Analytics Engineering",
+    "email": "marcus.sterling@enterprise.com",
+    "rating": 4.6,
+    "activeInterviewsCount": 2,
+    "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "INT-007",
+    "name": "Emily Wong",
+    "title": "Engineering Manager - UI",
+    "department": "Frontend Experience",
+    "email": "emily.wong@enterprise.com",
+    "rating": 4.8,
+    "activeInterviewsCount": 4,
+    "avatarUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "INT-008",
+    "name": "Nathaniel Price",
+    "title": "Staff Frontend Engineer",
+    "department": "Product Engineering",
+    "email": "nathaniel.price@enterprise.com",
+    "rating": 4.7,
+    "activeInterviewsCount": 3,
+    "avatarUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "INT-009",
+    "name": "Gary Larson",
+    "title": "Director of SRE",
+    "department": "Infrastructure & Security",
+    "email": "gary.larson@enterprise.com",
+    "rating": 4.9,
+    "activeInterviewsCount": 4,
+    "avatarUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "INT-010",
+    "name": "Samantha Reed",
+    "title": "Principal DevOps Architect",
+    "department": "Cloud Engineering",
+    "email": "samantha.reed@enterprise.com",
+    "rating": 4.8,
+    "activeInterviewsCount": 2,
+    "avatarUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=120&auto=format&fit=crop&q=80"
+  }
+]
